@@ -152,7 +152,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 14px 20px;
+      padding: 5px 20px;
       max-width: 1140px;
       margin: 0 auto;
     }
@@ -165,19 +165,41 @@
     }
 
     .navbar-logo-icon {
-      width: 42px;
-      height: 42px;
       background: var(--primary);
       border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 6px;
     }
 
     .navbar-logo-icon svg {
       width: 24px;
       height: 24px;
       fill: #fff;
+    }
+
+    .navbar-logo-icon img {
+      height: 62px;
+      width: auto;
+    }
+
+    .logo-mobile {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .logo-desktop {
+        display: none;
+      }
+
+      .logo-mobile {
+        display: block;
+      }
+
+      .navbar-logo-icon img {
+        height: 38px;
+      }
     }
 
     .navbar-brand {
@@ -1103,11 +1125,9 @@
     <div class="navbar-inner">
       <a href="#" class="navbar-logo">
         <div class="navbar-logo-icon">
-          <svg viewBox="0 0 24 24">
-            <path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.2l8 4v8.4l-8 4-8-4V8.2l8-4z" />
-          </svg>
+          <img src="assets/logo.png" alt="Seedling Public School" class="logo-desktop">
+          <img src="assets/logo-mob.png" alt="Seedling Public School" class="logo-mobile">
         </div>
-        <div class="navbar-brand">Seedling Public School <span>Jawahar Nagar, Jaipur</span></div>
       </a>
       <div class="navbar-cta">
         <a class="navbar-phone" href="tel:+917413012351">
@@ -1117,7 +1137,7 @@
           </svg>
           +91 74130 12351
         </a>
-        <a href="#enquire" class="btn-primary" style="padding:11px 22px;font-size:14px;">Get Admission Details</a>
+        <!-- <a href="#enquire" class="btn-primary" style="padding:11px 22px;font-size:14px;">Get Admission Details</a> -->
       </div>
     </div>
   </nav>
