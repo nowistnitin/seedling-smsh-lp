@@ -52,8 +52,25 @@
   .navbar-phone svg { width: 16px; height: 16px; fill: var(--accent); }
 
   /* HERO */
-  .hero { background: linear-gradient(135deg, #eaf4fb 0%, #fdf6ee 60%, #fef9f0 100%); padding: 64px 0 56px; overflow: hidden; }
-  .hero-grid { display: grid; grid-template-columns: 1fr 420px; gap: 48px; align-items: start; }
+  .hero {
+    background: url('assets/hero.png') center/cover no-repeat;
+    background-attachment: fixed;
+    padding: 64px 0 56px;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+  .hero > .container { max-width: 100%; padding: 0 40px; }
+  @media (max-width: 768px) {
+    .hero {
+      background: url('assets/hero-mob.png') center/cover no-repeat;
+      background-attachment: scroll;
+    }
+    .hero > .container { padding: 0 20px; }
+    .hero-grid { justify-content: center; }
+  }
+  .hero-grid { display: flex; justify-content: flex-end; gap: 48px; align-items: start; }
   .hero-eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
   .urgency-chip { background: var(--red-badge); color: #fff; border-radius: 30px; padding: 5px 14px; font-size: 13px; font-weight: 700; animation: pulse 2s infinite; }
   @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.7} }
@@ -229,28 +246,6 @@
 <section class="hero" id="hero">
   <div class="container">
     <div class="hero-grid">
-      <!-- Left: Copy -->
-      <div>
-        <div class="hero-eyebrow">
-          <span class="urgency-chip">🔴 Admissions Open 2026–27</span>
-          <span class="badge green">✓ Seats Filling Fast</span>
-        </div>
-        <h1>CBSE &amp; Cambridge<br>School in <em>Jaipur</em> —<br>Admissions Open</h1>
-        <p class="hero-sub">Choose the right path for your child – strong academics or global learning</p>
-        <p class="hero-tagline">"One School. Two Curriculums."</p>
-        <div class="trust-badges">
-          <span class="badge">🎓 CBSE &amp; Cambridge</span>
-          <span class="badge">💡 Smart Classrooms</span>
-          <span class="badge green">🛡️ Safe Campus</span>
-          <span class="badge orange">⭐ Est. 1992</span>
-        </div>
-        <div class="hero-cta-row">
-          <a href="#enquire" class="btn-primary" style="font-size:17px;padding:17px 36px;">Get Admission Details →</a>
-          <a href="tel:+917413012351" class="btn-outline">📞 Call Now</a>
-        </div>
-        <p class="hero-cta-sub">⚠️ Limited seats available. Enquire today to secure your child's future.</p>
-      </div>
-
       <!-- Right: Lead Form -->
       <div id="enquire">
         <div class="lead-form-card">
