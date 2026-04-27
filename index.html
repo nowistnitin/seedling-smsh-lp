@@ -444,7 +444,8 @@
     }
 
     .form-group input,
-    .form-group select {
+    .form-group select,
+    .form-group textarea {
       width: 100%;
       padding: 11px 14px;
       border: 1.5px solid var(--border);
@@ -458,9 +459,23 @@
     }
 
     .form-group input:focus,
-    .form-group select:focus {
+    .form-group select:focus,
+    .form-group textarea:focus {
       border-color: var(--primary);
       background: #fff;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .form-select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%235d7a8c' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 40px;
     }
 
     .form-submit {
@@ -1150,42 +1165,53 @@
         <div id="enquire">
           <div class="lead-form-card">
             <h3>Enquire Now</h3>
-            <p>Fill in the form and our team will call you within 24 hours</p>
-            <div class="form-group">
-              <label>Student's Name *</label>
-              <input type="text" placeholder="Enter student's name" />
+            <div class="form-row">
+              <div class="form-group">
+                <input type="text" placeholder="Name" name="Name" autocomplete="off" required="">
+              </div>
+              <div class="form-group">
+                <input type="email" placeholder="Email" name="Email" autocomplete="off" required="">
+              </div>
             </div>
             <div class="form-group">
-              <label>Parent's Name *</label>
-              <input type="text" placeholder="Enter your name" />
+              <input type="text" placeholder="Phone Number" pattern="[6-9]\d{9}" title="Should start with 6, 7, 8 or 9 and be exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1').slice(0, 10);" minlength="10" maxlength="10" name="Phone" autocomplete="off" required="">
             </div>
             <div class="form-group">
-              <label>Mobile Number *</label>
-              <input type="tel" placeholder="+91 XXXXXXXXXX" />
-            </div>
-            <div class="form-group">
-              <label>Class Applying For *</label>
-              <select>
-                <option value="">Select Class</option>
-                <option>Class 1</option>
-                <option>Class 2</option>
-                <option>Class 3</option>
-                <option>Class 4</option>
-                <option>Class 5</option>
-                <option>Class 6</option>
-                <option>Class 7</option>
-                <option>Class 8</option>
-                <option>Class 9</option>
-                <option>Class 10</option>
-                <option>Class 11</option>
+              <select class="form-select" name="School" required="">
+                <option value="">Select School</option>
+                <option value="Seedling Public School (CBSE), Jawahar Nagar, Jaipur">Seedling Public School (CBSE), Jawahar Nagar, Jaipur</option>
+                <option value="Seedling International Academy, Jawahar Nagar, Jaipur (Cambridge Board)">Seedling International Academy, Jawahar Nagar, Jaipur (Cambridge Board)</option>
+                <option value="Seedling Modern High School (CBSE), Durgapura, Jaipur">Seedling Modern High School (CBSE), Durgapura, Jaipur</option>
+                <option value="Seedling Modern International Academy, (Cambridge Board) Durgapura, Jaipur">Seedling Modern International Academy, (Cambridge Board) Durgapura, Jaipur</option>
+                <option value="Seedling Wonderland Kids League (Jawahar Nagar)">Seedling Wonderland Kids League (Jawahar Nagar)</option>
+                <option value="Seedling Wonderland Kids League (Durgapura)">Seedling Wonderland Kids League (Durgapura)</option>
               </select>
             </div>
             <div class="form-group">
-              <label>City *</label>
-              <input type="text" placeholder="Your city" />
+              <select class="form-select" name="Class" required="">
+                <option value="">Select Class</option>
+                <option value="Pre Nursery">Pre Nursery</option>
+                <option value="Nursery">Nursery</option>
+                <option value="LKG">LKG</option>
+                <option value="UKG">UKG</option>
+                <option value="Class I">Class I</option>
+                <option value="Class II">Class II</option>
+                <option value="Class III">Class III</option>
+                <option value="Class IV">Class IV</option>
+                <option value="Class V">Class V</option>
+                <option value="Class VI">Class VI</option>
+                <option value="Class VII">Class VII</option>
+                <option value="Class VIII">Class VIII</option>
+                <option value="Class IX">Class IX</option>
+                <option value="Class X">Class X</option>
+                <option value="Class XI">Class XI</option>
+              </select>
             </div>
-            <button class="btn-primary form-submit" onclick="handleFormSubmit()">Submit Enquiry →</button>
-            <!-- <p class="form-urgency">🔴 Limited Seats Available – Apply Now</p> -->
+            <div class="form-group">
+              <textarea name="Message" placeholder="Message" rows="3" required=""></textarea>
+            </div>
+            <input type="submit" value="Submit" class="btn-primary form-submit">
+            <div class="form-msg" style="display:none;"></div>
           </div>
         </div>
       </div>
@@ -1196,42 +1222,53 @@
       <div class="hero-form-mobile" id="enquire-mobile">
         <div class="lead-form-card">
           <h3>Enquire Now</h3>
-          <p>Fill in the form and our team will call you within 24 hours</p>
-          <div class="form-group">
-            <label>Student's Name *</label>
-            <input type="text" placeholder="Enter student's name" />
+          <div class="form-row">
+            <div class="form-group">
+              <input type="text" placeholder="Name" name="Name" autocomplete="off" required="">
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="Email" name="Email" autocomplete="off" required="">
+            </div>
           </div>
           <div class="form-group">
-            <label>Parent's Name *</label>
-            <input type="text" placeholder="Enter your name" />
+            <input type="text" placeholder="Phone Number" pattern="[6-9]\d{9}" title="Should start with 6, 7, 8 or 9 and be exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1').slice(0, 10);" minlength="10" maxlength="10" name="Phone" autocomplete="off" required="">
           </div>
           <div class="form-group">
-            <label>Mobile Number *</label>
-            <input type="tel" placeholder="+91 XXXXXXXXXX" />
-          </div>
-          <div class="form-group">
-            <label>Class Applying For *</label>
-            <select>
-              <option value="">Select Class</option>
-              <option>Class 1</option>
-              <option>Class 2</option>
-              <option>Class 3</option>
-              <option>Class 4</option>
-              <option>Class 5</option>
-              <option>Class 6</option>
-              <option>Class 7</option>
-              <option>Class 8</option>
-              <option>Class 9</option>
-              <option>Class 10</option>
-              <option>Class 11</option>
+            <select class="form-select" name="School" required="">
+              <option value="">Select School</option>
+              <option value="Seedling Public School (CBSE), Jawahar Nagar, Jaipur">Seedling Public School (CBSE), Jawahar Nagar, Jaipur</option>
+              <option value="Seedling International Academy, Jawahar Nagar, Jaipur (Cambridge Board)">Seedling International Academy, Jawahar Nagar, Jaipur (Cambridge Board)</option>
+              <option value="Seedling Modern High School (CBSE), Durgapura, Jaipur">Seedling Modern High School (CBSE), Durgapura, Jaipur</option>
+              <option value="Seedling Modern International Academy, (Cambridge Board) Durgapura, Jaipur">Seedling Modern International Academy, (Cambridge Board) Durgapura, Jaipur</option>
+              <option value="Seedling Wonderland Kids League (Jawahar Nagar)">Seedling Wonderland Kids League (Jawahar Nagar)</option>
+              <option value="Seedling Wonderland Kids League (Durgapura)">Seedling Wonderland Kids League (Durgapura)</option>
             </select>
           </div>
           <div class="form-group">
-            <label>City *</label>
-            <input type="text" placeholder="Your city" />
+            <select class="form-select" name="Class" required="">
+              <option value="">Select Class</option>
+              <option value="Pre Nursery">Pre Nursery</option>
+              <option value="Nursery">Nursery</option>
+              <option value="LKG">LKG</option>
+              <option value="UKG">UKG</option>
+              <option value="Class I">Class I</option>
+              <option value="Class II">Class II</option>
+              <option value="Class III">Class III</option>
+              <option value="Class IV">Class IV</option>
+              <option value="Class V">Class V</option>
+              <option value="Class VI">Class VI</option>
+              <option value="Class VII">Class VII</option>
+              <option value="Class VIII">Class VIII</option>
+              <option value="Class IX">Class IX</option>
+              <option value="Class X">Class X</option>
+              <option value="Class XI">Class XI</option>
+            </select>
           </div>
-          <button class="btn-primary form-submit" onclick="handleFormSubmit()">Submit Enquiry →</button>
-          <p class="form-urgency">🔴 Limited Seats Available – Apply Now</p>
+          <div class="form-group">
+            <textarea name="Message" placeholder="Message" rows="3" required=""></textarea>
+          </div>
+          <input type="submit" value="Submit" class="btn-primary form-submit">
+          <div class="form-msg" style="display:none;"></div>
         </div>
       </div>
     </div>
