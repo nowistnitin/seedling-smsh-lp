@@ -1116,76 +1116,202 @@
       color: var(--muted);
     }
 
-    /* TESTIMONIALS */
-    .testimonials-grid {
+    /* =============================================
+       TESTIMONIALS SLIDER — Dark Green Theme
+       ============================================= */
+    .testimonials-section {
+      background: #1e5c3a;
+      padding: 80px 0;
+      overflow: hidden;
+    }
+
+    .testimonials-section > .section {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      margin-top: 40px;
-    }
-
-    .testimonial-card {
-      background: var(--white);
-      border-radius: 20px;
-      padding: 28px 26px;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border);
-      position: relative;
-    }
-
-    .testimonial-card::before {
-      content: '"';
-      position: absolute;
-      top: 16px;
-      right: 24px;
-      font-size: 72px;
-      font-family: Georgia, serif;
-      color: var(--border);
-      line-height: 1;
-    }
-
-    .stars {
-      color: #f39c12;
-      font-size: 16px;
-      margin-bottom: 14px;
-    }
-
-    .testimonial-text {
-      font-size: 15px;
-      color: var(--text);
-      line-height: 1.7;
-      margin-bottom: 20px;
-      font-style: italic;
-    }
-
-    .testimonial-author {
-      display: flex;
+      grid-template-columns: 340px 1fr;
+      gap: 60px;
       align-items: center;
-      gap: 12px;
+      padding: 0 40px;
     }
 
-    .author-avatar {
-      width: 46px;
-      height: 46px;
+    /* LEFT PANEL */
+    .left-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .left-panel h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 400;
+      color: #fff;
+      line-height: 1.2;
+    }
+
+    .left-panel p {
+      font-size: 0.97rem;
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .nav-btn {
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
+      border: 1.5px solid rgba(255, 255, 255, 0.5);
+      background: transparent;
+      color: #fff;
+      font-size: 1.1rem;
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 700;
-      font-size: 18px;
-      color: #fff;
+      transition: background 0.25s, border-color 0.25s, transform 0.2s;
+    }
+
+    .nav-btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: #fff;
+      transform: scale(1.05);
+    }
+
+    .nav-btn:active {
+      transform: scale(0.97);
+    }
+
+    /* RIGHT PANEL — SLIDER */
+    .slider-wrapper {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+    }
+
+    .slider-track {
+      display: flex;
+      gap: 24px;
+      transition: transform 0.5s cubic-bezier(0.42, 0, 0.18, 1);
+      will-change: transform;
+    }
+
+    /* CARD */
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 36px 32px 30px;
       flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: relative;
     }
 
-    .author-name {
-      font-weight: 700;
-      font-size: 15px;
-      color: var(--primary);
+    .card .stars {
+      display: flex;
+      gap: 5px;
+      color: #2e7d52;
+      font-size: 1.25rem;
     }
 
-    .author-meta {
-      font-size: 13px;
-      color: var(--muted);
+    .card .review-text {
+      font-size: 0.93rem;
+      color: #333;
+      line-height: 1.75;
+      font-weight: 400;
+      flex: 1;
+    }
+
+    .card .reviewer {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: auto;
+    }
+
+    .reviewer-avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .reviewer-info {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .reviewer-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: #1a1a1a;
+      font-weight: 600;
+    }
+
+    .reviewer-desc {
+      font-size: 0.82rem;
+      color: #666;
+      font-weight: 400;
+    }
+
+    .quote-icon {
+      position: absolute;
+      bottom: 24px;
+      right: 24px;
+      opacity: 0.12;
+      font-size: 4rem;
+      line-height: 1;
+      font-family: Georgia, serif;
+      color: #2e7d52;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* Dots */
+    .dots {
+      display: flex;
+      gap: 8px;
+      justify-content: flex-start;
+      margin-top: 12px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.35);
+      cursor: pointer;
+      transition: background 0.25s, transform 0.2s;
+    }
+
+    .dot.active {
+      background: #fff;
+      transform: scale(1.25);
+    }
+
+    @media (max-width: 900px) {
+      .testimonials-section > .section {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        padding: 0 20px;
+      }
     }
 
     /* ADMISSION PROCESS */
@@ -1891,59 +2017,160 @@
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
-  <section class="section" id="testimonials">
-    <div class="container">
-      <div class="fade-up" style="text-align:center;">
-        <p
-          style="color:var(--accent);font-weight:700;font-size:14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">
-          Parent Stories</p>
-        <h2 class="section-title" style="text-align:center;">What Parents Say About Us</h2>
-        <div class="divider" style="margin:16px auto 0;"></div>
+  <!-- TESTIMONIALS SLIDER -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="section">
+      <!-- LEFT -->
+      <div class="left-panel">
+        <h2>Parent feedback's</h2>
+        <p>Our parent community shares heartfelt experiences of their children's journey at VIS — from academic growth to personal development, and the nurturing environment that makes learning truly joyful.</p>
+        <div class="nav-buttons">
+          <button class="nav-btn" id="prevBtn" aria-label="Previous">&#8592;</button>
+          <button class="nav-btn" id="nextBtn" aria-label="Next">&#8594;</button>
+        </div>
+        <div class="dots" id="dots"></div>
       </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card fade-up">
-          <div class="stars">★★★★★</div>
-          <p class="testimonial-text">The dual curriculum was the main reason we chose Seedling. My son started in CBSE
-            and later switched to Cambridge — the school made it seamless. He's now confident, curious and loves coming
-            to school every day.</p>
-          <div class="testimonial-author">
-            <div class="author-avatar" style="background:linear-gradient(135deg,#1a5276,#2e86c1);">K</div>
-            <div>
-              <div class="author-name">Komal Bhatia</div>
-              <div class="author-meta">Mother of Garv, Class V · Jaipur</div>
+
+      <!-- RIGHT: SLIDER -->
+      <div class="slider-wrapper" id="sliderWrapper">
+        <div class="slider-track" id="sliderTrack">
+
+          <!-- Card 1 -->
+          <div class="card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">The dual curriculum was the main reason we chose Seedling. My son started in CBSE and later switched to Cambridge — the school made it seamless. He's now confident, curious and loves coming to school every day.</p>
+            <div class="reviewer">
+              <div class="reviewer-avatar" style="background: linear-gradient(135deg, #1a5276, #2e86c1);">K</div>
+              <div class="reviewer-info">
+                <span class="reviewer-name">Komal Bhatia</span>
+                <span class="reviewer-desc">Mother of Garv, Class V · Jaipur</span>
+              </div>
             </div>
+            <div class="quote-icon">"</div>
           </div>
-        </div>
-        <div class="testimonial-card fade-up">
-          <div class="stars">★★★★★</div>
-          <p class="testimonial-text">The teachers genuinely care about every child. The campus is safe, the faculty is
-            experienced, and the focus on skills alongside academics is exactly what we were looking for. Best decision
-            we made for our daughter.</p>
-          <div class="testimonial-author">
-            <div class="author-avatar" style="background:linear-gradient(135deg,#e67e22,#f39c12);">A</div>
-            <div>
-              <div class="author-name">Aditi Sharma</div>
-              <div class="author-meta">Parent, Class VII · Vaishali Nagar</div>
+
+          <!-- Card 2 -->
+          <div class="card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">The teachers genuinely care about every child. The campus is safe, the faculty is experienced, and the focus on skills alongside academics is exactly what we were looking for. Best decision we made for our daughter.</p>
+            <div class="reviewer">
+              <div class="reviewer-avatar" style="background: linear-gradient(135deg, #e67e22, #f39c12);">A</div>
+              <div class="reviewer-info">
+                <span class="reviewer-name">Aditi Sharma</span>
+                <span class="reviewer-desc">Parent, Class VII · Vaishali Nagar</span>
+              </div>
             </div>
+            <div class="quote-icon">"</div>
           </div>
-        </div>
-        <div class="testimonial-card fade-up">
-          <div class="stars">★★★★★</div>
-          <p class="testimonial-text">My child has grown so much here — not just in marks but in personality. The smart
-            classrooms and experiential learning have made studies fun. I recommend Seedling to every parent who wants
-            the best for their child.</p>
-          <div class="testimonial-author">
-            <div class="author-avatar" style="background:linear-gradient(135deg,#1e8449,#27ae60);">A</div>
-            <div>
-              <div class="author-name">Ashish Kumar Jain</div>
-              <div class="author-meta">Parent, Class III · C-Scheme, Jaipur</div>
+
+          <!-- Card 3 -->
+          <div class="card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">My child has grown so much here — not just in marks but in personality. The smart classrooms and experiential learning have made studies fun. I recommend Seedling to every parent who wants the best for their child.</p>
+            <div class="reviewer">
+              <div class="reviewer-avatar" style="background: linear-gradient(135deg, #1e8449, #27ae60);">A</div>
+              <div class="reviewer-info">
+                <span class="reviewer-name">Ashish Kumar Jain</span>
+                <span class="reviewer-desc">Parent, Class III · C-Scheme, Jaipur</span>
+              </div>
             </div>
+            <div class="quote-icon">"</div>
           </div>
+
+          <!-- Card 4 -->
+          <div class="card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">Both my sons study at VIS and have learned a lot. My younger one even won 3rd prize in an interschool event thanks to the teachers' support. The methods, secure campus, and friendly staff make my kids love coming to school.</p>
+            <div class="reviewer">
+              <div class="reviewer-avatar" style="background: linear-gradient(135deg, #b5533c, #e07b5b);">P</div>
+              <div class="reviewer-info">
+                <span class="reviewer-name">Preeti Malgudi</span>
+                <span class="reviewer-desc">Parent of Aayush (nursery) &amp; Udit (Class 6)</span>
+              </div>
+            </div>
+            <div class="quote-icon">"</div>
+          </div>
+
         </div>
       </div>
     </div>
   </section>
+
+  <script>
+    const track = document.getElementById('sliderTrack');
+    const wrapper = document.getElementById('sliderWrapper');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const dotsContainer = document.getElementById('dots');
+
+    const cards = Array.from(track.querySelectorAll('.card'));
+    const total = cards.length;
+    const GAP = 24;
+    let current = 0;
+
+    const visibleCount = () => window.innerWidth <= 900 ? 1 : 2;
+
+    function setCardSizes() {
+      const vis = visibleCount();
+      const wrapperW = wrapper.offsetWidth;
+      const cardW = (wrapperW - GAP * (vis - 1)) / vis;
+      cards.forEach(c => { c.style.width = cardW + 'px'; });
+    }
+
+    const maxSlides = () => total - visibleCount() + 1;
+
+    function buildDots() {
+      dotsContainer.innerHTML = '';
+      const count = maxSlides();
+      for (let i = 0; i < count; i++) {
+        const d = document.createElement('div');
+        d.className = 'dot' + (i === current ? ' active' : '');
+        d.addEventListener('click', () => goTo(i));
+        dotsContainer.appendChild(d);
+      }
+    }
+
+    function updateDots() {
+      dotsContainer.querySelectorAll('.dot').forEach((d, i) =>
+        d.classList.toggle('active', i === current));
+    }
+
+    function getStepWidth() {
+      return cards[0].offsetWidth + GAP;
+    }
+
+    function goTo(index) {
+      const max = maxSlides() - 1;
+      current = Math.max(0, Math.min(index, max));
+      track.style.transform = `translateX(-${current * getStepWidth()}px)`;
+      updateDots();
+    }
+
+    function init() {
+      setCardSizes();
+      buildDots();
+      goTo(0);
+    }
+
+    prevBtn.addEventListener('click', () => goTo(current - 1));
+    nextBtn.addEventListener('click', () => goTo(current + 1));
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'ArrowLeft') goTo(current - 1);
+      if (e.key === 'ArrowRight') goTo(current + 1);
+    });
+
+    let touchStartX = 0;
+    wrapper.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    wrapper.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) diff > 0 ? goTo(current + 1) : goTo(current - 1);
+    });
+
+    window.addEventListener('resize', () => init());
+
+    init();
+  </script>
 
   <!-- ADMISSION PROCESS -->
   <section class="section process-section" id="process">
