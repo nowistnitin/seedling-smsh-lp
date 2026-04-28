@@ -1603,6 +1603,67 @@
         <!-- Right: Lead Form -->
         <div id="enquire">
           <div class="lead-form-card">
+            <form>
+              <input type="hidden" name="enquiry_page" value="Home Page Desktop Form">
+              <h3>Enquire Now</h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <input type="text" placeholder="Name" name="Name" autocomplete="off" required="">
+                </div>
+                <div class="form-group">
+                  <input type="email" placeholder="Email" name="Email" autocomplete="off" required="">
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" placeholder="Phone Number" pattern="[6-9]\d{9}" title="Should start with 6, 7, 8 or 9 and be exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1').slice(0, 10);" minlength="10" maxlength="10" name="Phone" autocomplete="off" required="">
+              </div>
+              <div class="form-group">
+                <select class="form-select" name="School" required="">
+                  <option value="">Select School</option>
+                  <option value="Seedling Public School (CBSE), Jawahar Nagar, Jaipur">Seedling Public School (CBSE), Jawahar Nagar, Jaipur</option>
+                  <option value="Seedling International Academy, Jawahar Nagar, Jaipur (Cambridge Board)">Seedling International Academy, Jawahar Nagar, Jaipur (Cambridge Board)</option>
+                  <option value="Seedling Modern High School (CBSE), Durgapura, Jaipur">Seedling Modern High School (CBSE), Durgapura, Jaipur</option>
+                  <option value="Seedling Modern International Academy, (Cambridge Board) Durgapura, Jaipur">Seedling Modern International Academy, (Cambridge Board) Durgapura, Jaipur</option>
+                  <option value="Seedling Wonderland Kids League (Jawahar Nagar)">Seedling Wonderland Kids League (Jawahar Nagar)</option>
+                  <option value="Seedling Wonderland Kids League (Durgapura)">Seedling Wonderland Kids League (Durgapura)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <select class="form-select" name="Class" required="">
+                  <option value="">Select Class</option>
+                  <option value="Pre Nursery">Pre Nursery</option>
+                  <option value="Nursery">Nursery</option>
+                  <option value="LKG">LKG</option>
+                  <option value="UKG">UKG</option>
+                  <option value="Class I">Class I</option>
+                  <option value="Class II">Class II</option>
+                  <option value="Class III">Class III</option>
+                  <option value="Class IV">Class IV</option>
+                  <option value="Class V">Class V</option>
+                  <option value="Class VI">Class VI</option>
+                  <option value="Class VII">Class VII</option>
+                  <option value="Class VIII">Class VIII</option>
+                  <option value="Class IX">Class IX</option>
+                  <option value="Class X">Class X</option>
+                  <option value="Class XI">Class XI</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <textarea name="Message" placeholder="Message" rows="3" required=""></textarea>
+              </div>
+              <input type="submit" value="Submit" class="btn-primary form-submit">
+              <div class="form-msg" style="display:none;"></div>
+            </form>
+          </div>
+        </div>
+      <!-- Mobile: Image then Form -->
+      <div class="hero-image-mobile">
+        <img src="assets/hero-mob.png" alt="Seedling Public School">
+      </div>
+      <div class="hero-form-mobile" id="enquire-mobile">
+        <div class="lead-form-card">
+          <form>
+            <input type="hidden" name="enquiry_page" value="Home Page Mobile Form">
             <h3>Enquire Now</h3>
             <div class="form-row">
               <div class="form-group">
@@ -1651,63 +1712,7 @@
             </div>
             <input type="submit" value="Submit" class="btn-primary form-submit">
             <div class="form-msg" style="display:none;"></div>
-          </div>
-        </div>
-      </div>
-      <!-- Mobile: Image then Form -->
-      <div class="hero-image-mobile">
-        <img src="assets/hero-mob.png" alt="Seedling Public School">
-      </div>
-      <div class="hero-form-mobile" id="enquire-mobile">
-        <div class="lead-form-card">
-          <h3>Enquire Now</h3>
-          <div class="form-row">
-            <div class="form-group">
-              <input type="text" placeholder="Name" name="Name" autocomplete="off" required="">
-            </div>
-            <div class="form-group">
-              <input type="email" placeholder="Email" name="Email" autocomplete="off" required="">
-            </div>
-          </div>
-          <div class="form-group">
-            <input type="text" placeholder="Phone Number" pattern="[6-9]\d{9}" title="Should start with 6, 7, 8 or 9 and be exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1').slice(0, 10);" minlength="10" maxlength="10" name="Phone" autocomplete="off" required="">
-          </div>
-          <div class="form-group">
-            <select class="form-select" name="School" required="">
-              <option value="">Select School</option>
-              <option value="Seedling Public School (CBSE), Jawahar Nagar, Jaipur">Seedling Public School (CBSE), Jawahar Nagar, Jaipur</option>
-              <option value="Seedling International Academy, Jawahar Nagar, Jaipur (Cambridge Board)">Seedling International Academy, Jawahar Nagar, Jaipur (Cambridge Board)</option>
-              <option value="Seedling Modern High School (CBSE), Durgapura, Jaipur">Seedling Modern High School (CBSE), Durgapura, Jaipur</option>
-              <option value="Seedling Modern International Academy, (Cambridge Board) Durgapura, Jaipur">Seedling Modern International Academy, (Cambridge Board) Durgapura, Jaipur</option>
-              <option value="Seedling Wonderland Kids League (Jawahar Nagar)">Seedling Wonderland Kids League (Jawahar Nagar)</option>
-              <option value="Seedling Wonderland Kids League (Durgapura)">Seedling Wonderland Kids League (Durgapura)</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <select class="form-select" name="Class" required="">
-              <option value="">Select Class</option>
-              <option value="Pre Nursery">Pre Nursery</option>
-              <option value="Nursery">Nursery</option>
-              <option value="LKG">LKG</option>
-              <option value="UKG">UKG</option>
-              <option value="Class I">Class I</option>
-              <option value="Class II">Class II</option>
-              <option value="Class III">Class III</option>
-              <option value="Class IV">Class IV</option>
-              <option value="Class V">Class V</option>
-              <option value="Class VI">Class VI</option>
-              <option value="Class VII">Class VII</option>
-              <option value="Class VIII">Class VIII</option>
-              <option value="Class IX">Class IX</option>
-              <option value="Class X">Class X</option>
-              <option value="Class XI">Class XI</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <textarea name="Message" placeholder="Message" rows="3" required=""></textarea>
-          </div>
-          <input type="submit" value="Submit" class="btn-primary form-submit">
-          <div class="form-msg" style="display:none;"></div>
+          </form>
         </div>
       </div>
     </div>
@@ -2277,13 +2282,112 @@
     }, { threshold: 0.1 });
     document.querySelectorAll('.fade-up, .growth-card').forEach(el => observer.observe(el));
 
-    // Form submit handler
-    function handleFormSubmit() {
-      const btn = document.querySelector('.form-submit');
-      btn.textContent = '✅ Thank You! We\'ll call you soon.';
-      btn.style.background = '#1e8449';
-      btn.disabled = true;
+    // UTM params
+    function getUTM() {
+      const p = {};
+      ['utm_source','utm_medium','utm_campaign'].forEach(k => {
+        const v = new URLSearchParams(window.location.search).get(k);
+        if (v) p[k] = v;
+      });
+      return p;
     }
+
+    // Phone validation: starts with 6-9, exactly 10 digits
+    function validatePhone(v) {
+      return /^[6-9]\d{9}$/.test(v);
+    }
+
+    // Form submit handler (desktop & mobile shared)
+    function handleFormSubmit(ev, form) {
+      ev.preventDefault();
+      const name = form.querySelector('[name="Name"]').value.trim();
+      const email = form.querySelector('[name="Email"]').value.trim();
+      const phone = form.querySelector('[name="Phone"]').value.trim();
+      const school = form.querySelector('[name="School"]').value;
+      const classSel = form.querySelector('[name="Class"]').value;
+      const msg = form.querySelector('[name="Message"]').value.trim();
+      const utm = getUTM();
+
+      if (!name || !email || !phone || !school || !classSel || !msg) {
+        showMsg(form, 'Please fill all fields.', 'error');
+        return;
+      }
+      if (!validatePhone(phone)) {
+        showMsg(form, 'Phone must start with 6-9 and be 10 digits.', 'error');
+        return;
+      }
+
+      const btn = form.querySelector('.form-submit');
+      btn.value = 'Submitting...';
+      btn.disabled = true;
+      showMsg(form, '', '');
+
+      // Build redirect URL with UTM
+      const redirect = 'thank-you.html';
+      const redirectUrl = new URL(redirect, window.location.href);
+      if (utm.utm_source) redirectUrl.searchParams.set('utm_source', utm.utm_source);
+      if (utm.utm_medium) redirectUrl.searchParams.set('utm_medium', utm.utm_medium);
+      if (utm.utm_campaign) redirectUrl.searchParams.set('utm_campaign', utm.utm_campaign);
+
+      // Set form action to PHP endpoint, target hidden iframe for no-cors post
+      form.action = 'https://seedlingschools.com/lead_submit.php';
+      form.method = 'POST';
+      form.target = 'formTarget';
+
+      // Set redirect param
+      let redirInput = form.querySelector('[name="redirect"]');
+      if (!redirInput) {
+        redirInput = document.createElement('input');
+        redirInput.type = 'hidden';
+        redirInput.name = 'redirect';
+        form.appendChild(redirInput);
+      }
+      redirInput.value = redirectUrl.toString();
+
+      // Add UTM fields to form
+      ['utm_source','utm_medium','utm_campaign'].forEach(k => {
+        if (utm[k]) {
+          let inp = form.querySelector('[name="' + k + '"]');
+          if (!inp) {
+            inp = document.createElement('input');
+            inp.type = 'hidden';
+            inp.name = k;
+            form.appendChild(inp);
+          }
+          inp.value = utm[k];
+        }
+      });
+
+      // Hidden iframe for submission
+      let iframe = document.getElementById('formFrame');
+      if (!iframe) {
+        iframe = document.createElement('iframe');
+        iframe.name = 'formTarget';
+        iframe.id = 'formFrame';
+        iframe.style.display = 'none';
+        document.body.appendChild(iframe);
+      }
+
+      iframe.onload = () => { window.location.href = redirectUrl.toString(); };
+      form.submit();
+    }
+
+    function showMsg(form, text, type) {
+      const el = form.querySelector('.form-msg');
+      if (!el) return;
+      el.textContent = text;
+      el.style.display = text ? 'block' : 'none';
+      el.style.color = type === 'error' ? '#c0392b' : '#1e8449';
+      el.style.fontSize = '13px';
+      el.style.fontWeight = '600';
+      el.style.marginTop = '8px';
+      el.style.textAlign = 'center';
+    }
+
+    // Attach to both forms
+    document.querySelectorAll('.lead-form-card form').forEach(form => {
+      form.addEventListener('submit', e => handleFormSubmit(e, form));
+    });
   </script>
 </body>
 
