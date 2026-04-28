@@ -490,24 +490,21 @@
       font-size: 16px;
       font-weight: 700;
       margin-top: 6px;
-      transition: background 0.15s, transform 0.15s;
     }
 
     .form-submit.submitting {
-      background: linear-gradient(135deg, #1a5276, #0e3550) !important;
-      animation: submitPulse 0.6s ease-in-out infinite;
+      opacity: 0.85;
+      cursor: not-allowed;
     }
 
-    @keyframes submitPulse {
+    @keyframes dotBounce {
+      0%, 80%, 100% { opacity: 0.3; transform: translateY(0); }
+      40% { opacity: 1; transform: translateY(-4px); }
+    }
 
-      0%,
-      100% {
-        opacity: 1;
-      }
-
-      50% {
-        opacity: 0.7;
-      }
+    .form-submit.submitting .btn-text::after {
+      content: '...';
+      animation: dotBounce 1.2s ease-in-out infinite;
     }
 
     .form-urgency {
@@ -1785,7 +1782,7 @@
               <div class="form-group">
                 <textarea name="Message" placeholder="Message" rows="3" required=""></textarea>
               </div>
-              <input type="submit" value="Submit" class="btn-primary form-submit">
+              <button type="submit" class="btn-primary form-submit">Submit<span class="btn-text"></span></button>
               <div class="form-msg" style="display:none;"></div>
             </form>
           </div>
@@ -1854,7 +1851,7 @@
             <div class="form-group">
               <textarea name="Message" placeholder="Message" rows="3" required=""></textarea>
             </div>
-            <input type="submit" value="Submit" class="btn-primary form-submit">
+            <button type="submit" class="btn-primary form-submit">Submit<span class="btn-text"></span></button>
             <div class="form-msg" style="display:none;"></div>
           </form>
         </div>
@@ -2480,56 +2477,22 @@
       const btn = form.querySelector('.form-submit');
       btn.classList.add('submitting');
       btn.disabled = true;
+      btn.childNodes[0].textContent = 'Submitting ';
       showMsg(form, '', '');
 
-      // Build redirect URL with UTM
-      const redirect = 'thank-you.html';
-      const redirectUrl = new URL(redirect, window.location.href);
-      if (utm.utm_source) redirectUrl.searchParams.set('utm_source', utm.utm_source);
-      if (utm.utm_medium) redirectUrl.searchParams.set('utm_medium', utm.utm_medium);
-      if (utm.utm_campaign) redirectUrl.searchParams.set('utm_campaign', utm.utm_campaign);
+      // TODO: uncomment when API is ready
+      // form.action = 'https://seedlingschools.com/lead_submit.php';
+      // form.method = 'POST';
+      // form.target = 'formTarget';
+      // ... (UTM fields, iframe, submit)
 
-      // Set form action to PHP endpoint, target hidden iframe for no-cors post
-      form.action = 'https://seedlingschools.com/lead_submit.php';
-      form.method = 'POST';
-      form.target = 'formTarget';
-
-      // Set redirect param
-      let redirInput = form.querySelector('[name="redirect"]');
-      if (!redirInput) {
-        redirInput = document.createElement('input');
-        redirInput.type = 'hidden';
-        redirInput.name = 'redirect';
-        form.appendChild(redirInput);
-      }
-      redirInput.value = redirectUrl.toString();
-
-      // Add UTM fields to form
-      ['utm_source', 'utm_medium', 'utm_campaign'].forEach(k => {
-        if (utm[k]) {
-          let inp = form.querySelector('[name="' + k + '"]');
-          if (!inp) {
-            inp = document.createElement('input');
-            inp.type = 'hidden';
-            inp.name = k;
-            form.appendChild(inp);
-          }
-          inp.value = utm[k];
-        }
-      });
-
-      // Hidden iframe for submission
-      let iframe = document.getElementById('formFrame');
-      if (!iframe) {
-        iframe = document.createElement('iframe');
-        iframe.name = 'formTarget';
-        iframe.id = 'formFrame';
-        iframe.style.display = 'none';
-        document.body.appendChild(iframe);
-      }
-
-      iframe.onload = () => { window.location.href = redirectUrl.toString(); };
-      form.submit();
+      // For now: simulate submission
+      setTimeout(() => {
+        btn.classList.remove('submitting');
+        btn.disabled = false;
+        btn.childNodes[0].textContent = 'Submit';
+        showMsg(form, 'Submission disabled for testing.', 'error');
+      }, 2000);
     }
 
     function showMsg(form, text, type) {
