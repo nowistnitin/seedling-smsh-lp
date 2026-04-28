@@ -141,12 +141,12 @@
 
     /* NAVBAR */
     .navbar {
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
+      background: #26419f;
+      border-bottom: 1px solid #333;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 12px rgba(26, 82, 118, .07);
+      box-shadow: 0 2px 12px rgba(0,0,0,.3);
     }
 
     .navbar-inner {
@@ -166,12 +166,10 @@
     }
 
     .navbar-logo-icon {
-      background: var(--primary);
-      border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 6px;
+      padding: 0;
     }
 
     .navbar-logo-icon svg {
@@ -207,7 +205,7 @@
       font-family: 'Playfair Display', serif;
       font-size: 18px;
       font-weight: 700;
-      color: var(--primary);
+      color: #fff;
       line-height: 1.2;
     }
 
@@ -216,7 +214,7 @@
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 12px;
       font-weight: 500;
-      color: var(--muted);
+      color: #aaa;
     }
 
     .navbar-cta {
@@ -226,7 +224,7 @@
     }
 
     .navbar-phone {
-      color: var(--primary);
+      color: #fff;
       font-weight: 700;
       font-size: 15px;
       text-decoration: none;
@@ -1243,7 +1241,7 @@
        TESTIMONIALS SLIDER — Dark Green Theme
        ============================================= */
     .testimonials-section {
-      background: #1e5c3a;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
       padding: 80px 0;
       overflow: hidden;
     }
@@ -1594,7 +1592,7 @@
       color: #fff;
       border-radius: 10px;
       padding: 14px;
-      font-size: 16px;
+      font-size: 20px;
       font-weight: 700;
       text-decoration: none;
     }
@@ -1646,7 +1644,7 @@
 
     @media (max-width: 600px) {
       .section {
-        padding: 48px 0;
+        padding: 35px 0;
       }
 
       .process-steps {
@@ -1864,9 +1862,9 @@
   <section class="section" id="why">
     <div class="container">
       <div class="fade-up" style="text-align:center;">
-        <p
+        <!-- <p
           style="color:var(--accent);font-weight:700;font-size:14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">
-          Why Us</p>
+          Why Us</p> -->
         <h2 class="section-title" style="text-align:center;">Why Parents Prefer Our School</h2>
         <div class="divider" style="margin:16px auto 0;"></div>
       </div>
@@ -2427,8 +2425,8 @@
 
   <!-- STICKY CTA (mobile) -->
   <div class="sticky-cta">
-    <a href="#enquire">🎓 Get Admission Details – Limited Seats!</a>
-    <p class="sticky-cta-sub">⚠️ Enquire Now for 2026–27</p>
+    <a href="#enquire">Enquire Now</a>
+    <!-- <p class="sticky-cta-sub">⚠️ Enquire Now for 2026–27</p> -->
   </div>
 
   <script>
