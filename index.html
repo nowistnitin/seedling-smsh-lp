@@ -2480,19 +2480,38 @@
       btn.childNodes[0].textContent = 'Submitting ';
       showMsg(form, '', '');
 
-      // TODO: uncomment when API is ready
-      // form.action = 'https://seedlingschools.com/lead_submit.php';
-      // form.method = 'POST';
-      // form.target = 'formTarget';
-      // ... (UTM fields, iframe, submit)
+      // Build redirect URL with UTM params preserved
+      const redirectUrl = new URL(window.location.origin + '/thank-you.html');
+      const enquiryPage = form.querySelector('[name="enquiry_page"]')?.value || '';
+      redirectUrl.searchParams.set('enquiry_page', enquiryPage);
+      ['utm_source', 'utm_medium', 'utm_campaign'].forEach(k => {
+        if (utm[k]) redirectUrl.searchParams.set(k, utm[k]);
+      });
 
-      // For now: simulate submission
-      setTimeout(() => {
-        btn.classList.remove('submitting');
-        btn.disabled = false;
-        btn.childNodes[0].textContent = 'Submit';
-        showMsg(form, 'Submission disabled for testing.', 'error');
-      }, 2000);
+      // Set form action to PHP endpoint, target hidden iframe for no-cors post
+      form.action = 'https://seedlingschools.com/lead_submit.php';
+      form.method = 'POST';
+      form.target = 'formTarget';
+
+      // Set redirect param
+      let redirInput = form.querySelector('[name="redirect"]');
+      if (!redirInput) { redirInput = document.createElement('input'); redirInput.type = 'hidden'; redirInput.name = 'redirect'; form.appendChild(redirInput); }
+      redirInput.value = redirectUrl.toString();
+
+      // Add UTM fields to form
+      ['utm_source', 'utm_medium', 'utm_campaign'].forEach(k => {
+        if (utm[k]) {
+          let inp = form.querySelector('[name="' + k + '"]');
+          if (!inp) { inp = document.createElement('input'); inp.type = 'hidden'; inp.name = k; form.appendChild(inp); }
+          inp.value = utm[k];
+        }
+      });
+
+      // Hidden iframe for submission
+      let iframe = document.getElementById('formFrame');
+      if (!iframe) { iframe = document.createElement('iframe'); iframe.name = 'formTarget'; iframe.id = 'formFrame'; iframe.style.display = 'none'; document.body.appendChild(iframe); }
+      iframe.onload = () => { window.location.href = redirectUrl.toString(); };
+      form.submit();
     }
 
     function showMsg(form, text, type) {
