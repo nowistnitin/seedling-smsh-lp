@@ -181,7 +181,7 @@
     }
 
     .navbar-logo-icon img {
-      height: 62px;
+      height: 72px;
       width: auto;
     }
 
@@ -1697,7 +1697,7 @@
     .cl-section {
       background: var(--off-white);
       padding: 0;
-      min-height: 100vh;
+      /* min-height: 100vh; */
       display: flex;
       flex-direction: column;
     }
@@ -1850,32 +1850,20 @@
       flex: 1;
       overflow: hidden;
       position: relative;
-      background: var(--cream);
+      /* background: var(--cream); */
       height: 200px;
     }
 
-    .cl-slider::before,
-    .cl-slider::after {
-      content: '';
-      position: absolute;
-      top: 0; bottom: 0;
-      width: 0;
-      z-index: 2;
-      pointer-events: none;
-    }
-    .cl-slider::before { left: 0; background: none; }
-    .cl-slider::after  { right: 0; background: none; }
-
     .cl-track-wrap {
       display: flex;
-      height: 100%;
+      height: 200px;
     }
 
     .cl-track {
       display: flex;
       gap: 16px;
-      align-items: stretch;
-      height: 100%;
+      align-items: center;
+      height: 200px;
       animation: infiniteScroll 28s linear infinite;
       will-change: transform;
     }
@@ -1896,8 +1884,8 @@
     }
 
     .cl-slide img {
-      width: 100%;
-      height: 100%;
+      width: 200px;
+      height: 200px;
       object-fit: cover;
       display: block;
       transition: transform 0.6s ease;
@@ -1927,7 +1915,7 @@
       align-items: center;
       justify-content: center;
       gap: 7px;
-      padding: 18px 0 10px;
+      padding: 0;
       background: var(--off-white);
       flex-shrink: 0;
     }
