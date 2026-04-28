@@ -2141,7 +2141,26 @@
 
     function goTo(index) {
       const max = maxSlides() - 1;
-      current = Math.max(0, Math.min(index, max));
+      if (index > max) {
+        // Wrap: animate to end, then snap to start without animation
+        current = index % (max + 1);
+        if (index > max + 1) {
+          track.style.transition = 'none';
+          track.style.transform = `translateX(-${(max + 1) * getStepWidth()}px)`;
+          void track.offsetWidth;
+          track.style.transition = '';
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              track.style.transform = `translateX(-${current * getStepWidth()}px)`;
+            });
+          });
+          return;
+        }
+      } else if (index < 0) {
+        current = max;
+      } else {
+        current = index;
+      }
       track.style.transform = `translateX(-${current * getStepWidth()}px)`;
       updateDots();
     }
@@ -2152,22 +2171,30 @@
       goTo(0);
     }
 
-    prevBtn.addEventListener('click', () => goTo(current - 1));
-    nextBtn.addEventListener('click', () => goTo(current + 1));
+    window.addEventListener('resize', () => init());
+
+    autoSlide = setInterval(() => goTo(current + 1), 4000);
+
+    function resetAutoSlide() {
+      clearInterval(autoSlide);
+      autoSlide = setInterval(() => goTo(current + 1), 4000);
+    }
+
+    [prevBtn, nextBtn].forEach(btn => {
+      btn.addEventListener('click', () => { goTo(btn === prevBtn ? current - 1 : current + 1); resetAutoSlide(); });
+    });
 
     document.addEventListener('keydown', e => {
-      if (e.key === 'ArrowLeft') goTo(current - 1);
-      if (e.key === 'ArrowRight') goTo(current + 1);
+      if (e.key === 'ArrowLeft') { goTo(current - 1); resetAutoSlide(); }
+      if (e.key === 'ArrowRight') { goTo(current + 1); resetAutoSlide(); }
     });
 
     let touchStartX = 0;
     wrapper.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
     wrapper.addEventListener('touchend', e => {
       const diff = touchStartX - e.changedTouches[0].clientX;
-      if (Math.abs(diff) > 40) diff > 0 ? goTo(current + 1) : goTo(current - 1);
+      if (Math.abs(diff) > 40) { diff > 0 ? goTo(current + 1) : goTo(current - 1); resetAutoSlide(); }
     });
-
-    window.addEventListener('resize', () => init());
 
     init();
   </script>
