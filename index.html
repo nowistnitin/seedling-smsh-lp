@@ -263,6 +263,12 @@
       display: none;
     }
 
+    .hero-form-mobile .lead-form-card {
+      border-radius: 16px;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
     @media (max-width: 768px) {
       .hero {
         background: none;
@@ -292,8 +298,8 @@
       .hero-form-mobile {
         display: block !important;
         padding: 20px;
-        background: #001b81;
-        height: 420px;
+        background: #001c7d;
+        height: 415px;
       }
     }
 
@@ -313,7 +319,7 @@
       align-items: start;
     }
 
-    .hero-grid > #enquire {
+    .hero-grid>#enquire {
       width: 65%;
     }
 
@@ -484,6 +490,24 @@
       font-size: 16px;
       font-weight: 700;
       margin-top: 6px;
+      transition: background 0.15s, transform 0.15s;
+    }
+
+    .form-submit.submitting {
+      background: linear-gradient(135deg, #1a5276, #0e3550) !important;
+      animation: submitPulse 0.6s ease-in-out infinite;
+    }
+
+    @keyframes submitPulse {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.7;
+      }
     }
 
     .form-urgency {
@@ -690,7 +714,7 @@
       font-size: 18px;
     }
 
-  /* =============================================
+    /* =============================================
      GROWTH SECTION — Garden / Nature Theme
      ============================================= */
     .growth-section {
@@ -703,9 +727,11 @@
     .growth-section::before {
       content: '';
       position: absolute;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       height: 120px;
-      background: linear-gradient(to bottom, rgba(255,255,255,0.6), transparent);
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), transparent);
       pointer-events: none;
       z-index: 2;
     }
@@ -725,29 +751,40 @@
     }
 
     .growth-blob-1 {
-      width: 400px; height: 400px;
+      width: 400px;
+      height: 400px;
       background: #1a5276;
-      top: -100px; right: -80px;
+      top: -100px;
+      right: -80px;
       animation: blobDrift 8s ease-in-out infinite alternate;
     }
 
     .growth-blob-2 {
-      width: 300px; height: 300px;
+      width: 300px;
+      height: 300px;
       background: #e67e22;
-      bottom: -60px; left: -60px;
+      bottom: -60px;
+      left: -60px;
       animation: blobDrift 10s ease-in-out infinite alternate-reverse;
     }
 
     .growth-blob-3 {
-      width: 200px; height: 200px;
+      width: 200px;
+      height: 200px;
       background: #27ae60;
-      top: 40%; left: 30%;
+      top: 40%;
+      left: 30%;
       animation: blobDrift 6s ease-in-out infinite alternate;
     }
 
     @keyframes blobDrift {
-      0%   { transform: translate(0,0) scale(1) rotate(0deg); }
-      100% { transform: translate(20px,-20px) scale(1.08) rotate(8deg); }
+      0% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+      }
+
+      100% {
+        transform: translate(20px, -20px) scale(1.08) rotate(8deg);
+      }
     }
 
     .growth-header {
@@ -810,11 +847,26 @@
     }
 
     /* Staggered row heights for botanical feel */
-    .growth-card:nth-child(1) { grid-row: span 1; }
-    .growth-card:nth-child(2) { grid-row: span 1; margin-top: 0; }
-    .growth-card:nth-child(3) { grid-row: span 1; }
-    .growth-card:nth-child(4) { grid-row: span 1; }
-    .growth-card:nth-child(5) { grid-row: span 1; }
+    .growth-card:nth-child(1) {
+      grid-row: span 1;
+    }
+
+    .growth-card:nth-child(2) {
+      grid-row: span 1;
+      margin-top: 0;
+    }
+
+    .growth-card:nth-child(3) {
+      grid-row: span 1;
+    }
+
+    .growth-card:nth-child(4) {
+      grid-row: span 1;
+    }
+
+    .growth-card:nth-child(5) {
+      grid-row: span 1;
+    }
 
     .growth-card {
       border-radius: 24px;
@@ -826,7 +878,7 @@
       align-items: center;
       text-align: center;
       transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
-                  box-shadow 0.35s ease;
+        box-shadow 0.35s ease;
       cursor: pointer;
       min-height: 220px;
     }
@@ -853,39 +905,69 @@
       background: linear-gradient(145deg, #e8f5e9 0%, #c8e6c9 100%);
       box-shadow: 0 6px 28px rgba(39, 174, 96, 0.18);
     }
-    .growth-card-1:hover { box-shadow: 0 16px 48px rgba(39, 174, 96, 0.32); }
-    .growth-card-1::before { background: linear-gradient(145deg, #a5d6a7, #81c784); }
+
+    .growth-card-1:hover {
+      box-shadow: 0 16px 48px rgba(39, 174, 96, 0.32);
+    }
+
+    .growth-card-1::before {
+      background: linear-gradient(145deg, #a5d6a7, #81c784);
+    }
 
     .growth-card-2 {
       background: linear-gradient(145deg, #e3f2fd 0%, #bbdefb 100%);
       box-shadow: 0 6px 28px rgba(25, 118, 210, 0.15);
       margin-top: 28px;
     }
-    .growth-card-2:hover { box-shadow: 0 16px 48px rgba(25, 118, 210, 0.28); }
-    .growth-card-2::before { background: linear-gradient(145deg, #90caf9, #64b5f6); }
+
+    .growth-card-2:hover {
+      box-shadow: 0 16px 48px rgba(25, 118, 210, 0.28);
+    }
+
+    .growth-card-2::before {
+      background: linear-gradient(145deg, #90caf9, #64b5f6);
+    }
 
     .growth-card-3 {
       background: linear-gradient(145deg, #fff3e0 0%, #ffe0b2 100%);
       box-shadow: 0 6px 28px rgba(230, 126, 34, 0.15);
     }
-    .growth-card-3:hover { box-shadow: 0 16px 48px rgba(230, 126, 34, 0.28); }
-    .growth-card-3::before { background: linear-gradient(145deg, #ffcc80, #ffb74d); }
+
+    .growth-card-3:hover {
+      box-shadow: 0 16px 48px rgba(230, 126, 34, 0.28);
+    }
+
+    .growth-card-3::before {
+      background: linear-gradient(145deg, #ffcc80, #ffb74d);
+    }
 
     .growth-card-4 {
       background: linear-gradient(145deg, #fce4ec 0%, #f8bbd9 100%);
       box-shadow: 0 6px 28px rgba(198, 40, 40, 0.13);
       margin-top: 14px;
     }
-    .growth-card-4:hover { box-shadow: 0 16px 48px rgba(198, 40, 40, 0.24); }
-    .growth-card-4::before { background: linear-gradient(145deg, #f48fb1, #f06292); }
+
+    .growth-card-4:hover {
+      box-shadow: 0 16px 48px rgba(198, 40, 40, 0.24);
+    }
+
+    .growth-card-4::before {
+      background: linear-gradient(145deg, #f48fb1, #f06292);
+    }
 
     .growth-card-5 {
       background: linear-gradient(145deg, #ede7f6 0%, #d1c4e9 100%);
       box-shadow: 0 6px 28px rgba(103, 58, 183, 0.14);
       margin-top: 6px;
     }
-    .growth-card-5:hover { box-shadow: 0 16px 48px rgba(103, 58, 183, 0.26); }
-    .growth-card-5::before { background: linear-gradient(145deg, #b39ddb, #9575cd); }
+
+    .growth-card-5:hover {
+      box-shadow: 0 16px 48px rgba(103, 58, 183, 0.26);
+    }
+
+    .growth-card-5::before {
+      background: linear-gradient(145deg, #b39ddb, #9575cd);
+    }
 
     /* Decorative leaf accent */
     .growth-leaf {
@@ -928,11 +1010,25 @@
     }
 
     /* Icon bg tints */
-    .growth-card-1 .growth-icon-wrap { background: rgba(39,174,96,0.15); }
-    .growth-card-2 .growth-icon-wrap { background: rgba(25,118,210,0.13); }
-    .growth-card-3 .growth-icon-wrap { background: rgba(230,126,34,0.15); }
-    .growth-card-4 .growth-icon-wrap { background: rgba(198,40,40,0.12); }
-    .growth-card-5 .growth-icon-wrap { background: rgba(103,58,183,0.13); }
+    .growth-card-1 .growth-icon-wrap {
+      background: rgba(39, 174, 96, 0.15);
+    }
+
+    .growth-card-2 .growth-icon-wrap {
+      background: rgba(25, 118, 210, 0.13);
+    }
+
+    .growth-card-3 .growth-icon-wrap {
+      background: rgba(230, 126, 34, 0.15);
+    }
+
+    .growth-card-4 .growth-icon-wrap {
+      background: rgba(198, 40, 40, 0.12);
+    }
+
+    .growth-card-5 .growth-icon-wrap {
+      background: rgba(103, 58, 183, 0.13);
+    }
 
     .growth-icon-wrap svg path,
     .growth-icon-wrap svg circle,
@@ -969,7 +1065,9 @@
     /* Decorative bottom wave */
     .growth-wave {
       position: absolute;
-      bottom: 0; left: 0; right: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
       height: 80px;
       overflow: hidden;
       pointer-events: none;
@@ -991,11 +1089,30 @@
       transform: translateY(0);
     }
 
-    .growth-card:nth-child(1) { transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.35s ease; transition-delay: 0.05s; }
-    .growth-card:nth-child(2) { transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.35s ease; transition-delay: 0.15s; }
-    .growth-card:nth-child(3) { transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.35s ease; transition-delay: 0.25s; }
-    .growth-card:nth-child(4) { transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.35s ease; transition-delay: 0.35s; }
-    .growth-card:nth-child(5) { transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.35s ease; transition-delay: 0.45s; }
+    .growth-card:nth-child(1) {
+      transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.35s ease;
+      transition-delay: 0.05s;
+    }
+
+    .growth-card:nth-child(2) {
+      transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.35s ease;
+      transition-delay: 0.15s;
+    }
+
+    .growth-card:nth-child(3) {
+      transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.35s ease;
+      transition-delay: 0.25s;
+    }
+
+    .growth-card:nth-child(4) {
+      transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.35s ease;
+      transition-delay: 0.35s;
+    }
+
+    .growth-card:nth-child(5) {
+      transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.35s ease;
+      transition-delay: 0.45s;
+    }
 
     /* Ripple effect on card hover */
     .growth-card::after {
@@ -1003,7 +1120,7 @@
       position: absolute;
       inset: 0;
       border-radius: 24px;
-      background: radial-gradient(circle at var(--rx, 50%) var(--ry, 50%), rgba(255,255,255,0.35) 0%, transparent 70%);
+      background: radial-gradient(circle at var(--rx, 50%) var(--ry, 50%), rgba(255, 255, 255, 0.35) 0%, transparent 70%);
       opacity: 0;
       transition: opacity 0.3s ease;
       pointer-events: none;
@@ -1018,9 +1135,13 @@
         grid-template-columns: repeat(3, 1fr);
         max-width: 600px;
       }
-      .growth-card-2, .growth-card-4, .growth-card-5 {
+
+      .growth-card-2,
+      .growth-card-4,
+      .growth-card-5 {
         margin-top: 0;
       }
+
       .growth-card {
         min-height: 200px;
       }
@@ -1031,6 +1152,7 @@
         grid-template-columns: 1fr 1fr;
         gap: 14px 10px;
       }
+
       .growth-card {
         min-height: 180px;
         padding: 24px 16px 20px;
@@ -1042,7 +1164,10 @@
         grid-template-columns: 1fr;
         max-width: 320px;
       }
-      .growth-card { min-height: 160px; }
+
+      .growth-card {
+        min-height: 160px;
+      }
     }
 
     /* FACILITIES */
@@ -1125,7 +1250,7 @@
       overflow: hidden;
     }
 
-    .testimonials-section > .section {
+    .testimonials-section>.section {
       width: 100%;
       max-width: 1200px;
       margin: 0 auto;
@@ -1307,7 +1432,7 @@
     }
 
     @media (max-width: 900px) {
-      .testimonials-section > .section {
+      .testimonials-section>.section {
         grid-template-columns: 1fr;
         gap: 36px;
         padding: 0 20px;
@@ -1615,17 +1740,26 @@
                 </div>
               </div>
               <div class="form-group">
-                <input type="text" placeholder="Phone Number" pattern="[6-9]\d{9}" title="Should start with 6, 7, 8 or 9 and be exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1').slice(0, 10);" minlength="10" maxlength="10" name="Phone" autocomplete="off" required="">
+                <input type="text" placeholder="Phone Number" pattern="[6-9]\d{9}"
+                  title="Should start with 6, 7, 8 or 9 and be exactly 10 digits"
+                  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1').slice(0, 10);"
+                  minlength="10" maxlength="10" name="Phone" autocomplete="off" required="">
               </div>
               <div class="form-group">
                 <select class="form-select" name="School" required="">
                   <option value="">Select School</option>
-                  <option value="Seedling Public School (CBSE), Jawahar Nagar, Jaipur">Seedling Public School (CBSE), Jawahar Nagar, Jaipur</option>
-                  <option value="Seedling International Academy, Jawahar Nagar, Jaipur (Cambridge Board)">Seedling International Academy, Jawahar Nagar, Jaipur (Cambridge Board)</option>
-                  <option value="Seedling Modern High School (CBSE), Durgapura, Jaipur">Seedling Modern High School (CBSE), Durgapura, Jaipur</option>
-                  <option value="Seedling Modern International Academy, (Cambridge Board) Durgapura, Jaipur">Seedling Modern International Academy, (Cambridge Board) Durgapura, Jaipur</option>
-                  <option value="Seedling Wonderland Kids League (Jawahar Nagar)">Seedling Wonderland Kids League (Jawahar Nagar)</option>
-                  <option value="Seedling Wonderland Kids League (Durgapura)">Seedling Wonderland Kids League (Durgapura)</option>
+                  <option value="Seedling Public School (CBSE), Jawahar Nagar, Jaipur">Seedling Public School (CBSE),
+                    Jawahar Nagar, Jaipur</option>
+                  <option value="Seedling International Academy, Jawahar Nagar, Jaipur (Cambridge Board)">Seedling
+                    International Academy, Jawahar Nagar, Jaipur (Cambridge Board)</option>
+                  <option value="Seedling Modern High School (CBSE), Durgapura, Jaipur">Seedling Modern High School
+                    (CBSE), Durgapura, Jaipur</option>
+                  <option value="Seedling Modern International Academy, (Cambridge Board) Durgapura, Jaipur">Seedling
+                    Modern International Academy, (Cambridge Board) Durgapura, Jaipur</option>
+                  <option value="Seedling Wonderland Kids League (Jawahar Nagar)">Seedling Wonderland Kids League
+                    (Jawahar Nagar)</option>
+                  <option value="Seedling Wonderland Kids League (Durgapura)">Seedling Wonderland Kids League
+                    (Durgapura)</option>
                 </select>
               </div>
               <div class="form-group">
@@ -1656,6 +1790,7 @@
             </form>
           </div>
         </div>
+      </div>
       <!-- Mobile: Image then Form -->
       <div class="hero-image-mobile">
         <img src="assets/hero-mob.png" alt="Seedling Public School">
@@ -1674,17 +1809,26 @@
               </div>
             </div>
             <div class="form-group">
-              <input type="text" placeholder="Phone Number" pattern="[6-9]\d{9}" title="Should start with 6, 7, 8 or 9 and be exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1').slice(0, 10);" minlength="10" maxlength="10" name="Phone" autocomplete="off" required="">
+              <input type="text" placeholder="Phone Number" pattern="[6-9]\d{9}"
+                title="Should start with 6, 7, 8 or 9 and be exactly 10 digits"
+                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1').slice(0, 10);"
+                minlength="10" maxlength="10" name="Phone" autocomplete="off" required="">
             </div>
             <div class="form-group">
               <select class="form-select" name="School" required="">
                 <option value="">Select School</option>
-                <option value="Seedling Public School (CBSE), Jawahar Nagar, Jaipur">Seedling Public School (CBSE), Jawahar Nagar, Jaipur</option>
-                <option value="Seedling International Academy, Jawahar Nagar, Jaipur (Cambridge Board)">Seedling International Academy, Jawahar Nagar, Jaipur (Cambridge Board)</option>
-                <option value="Seedling Modern High School (CBSE), Durgapura, Jaipur">Seedling Modern High School (CBSE), Durgapura, Jaipur</option>
-                <option value="Seedling Modern International Academy, (Cambridge Board) Durgapura, Jaipur">Seedling Modern International Academy, (Cambridge Board) Durgapura, Jaipur</option>
-                <option value="Seedling Wonderland Kids League (Jawahar Nagar)">Seedling Wonderland Kids League (Jawahar Nagar)</option>
-                <option value="Seedling Wonderland Kids League (Durgapura)">Seedling Wonderland Kids League (Durgapura)</option>
+                <option value="Seedling Public School (CBSE), Jawahar Nagar, Jaipur">Seedling Public School (CBSE),
+                  Jawahar Nagar, Jaipur</option>
+                <option value="Seedling International Academy, Jawahar Nagar, Jaipur (Cambridge Board)">Seedling
+                  International Academy, Jawahar Nagar, Jaipur (Cambridge Board)</option>
+                <option value="Seedling Modern High School (CBSE), Durgapura, Jaipur">Seedling Modern High School
+                  (CBSE), Durgapura, Jaipur</option>
+                <option value="Seedling Modern International Academy, (Cambridge Board) Durgapura, Jaipur">Seedling
+                  Modern International Academy, (Cambridge Board) Durgapura, Jaipur</option>
+                <option value="Seedling Wonderland Kids League (Jawahar Nagar)">Seedling Wonderland Kids League (Jawahar
+                  Nagar)</option>
+                <option value="Seedling Wonderland Kids League (Durgapura)">Seedling Wonderland Kids League (Durgapura)
+                </option>
               </select>
             </div>
             <div class="form-group">
@@ -1858,8 +2002,11 @@
     <div class="container" style="position:relative;z-index:2;">
       <div class="growth-header">
         <div class="growth-pill-label">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22V12"/><path d="M12 12C12 7 8 4 3 4c0 5 4 8 9 8z"/><path d="M12 12c0-5 4-8 9-8 0 5-4 8-9 8z"/>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22V12" />
+            <path d="M12 12C12 7 8 4 3 4c0 5 4 8 9 8z" />
+            <path d="M12 12c0-5 4-8 9-8 0 5-4 8-9 8z" />
           </svg>
           Holistic Growth
         </div>
@@ -1873,14 +2020,15 @@
         <!-- Card 1 — Public Speaking · Green -->
         <div class="growth-card growth-card-1">
           <svg class="growth-leaf" viewBox="0 0 64 64" fill="none">
-            <path d="M32 60 C32 30 6 30 6 16 C20 16 32 8 32 8 C32 8 44 16 58 16 C58 30 32 30 32 60Z" fill="#27ae60"/>
+            <path d="M32 60 C32 30 6 30 6 16 C20 16 32 8 32 8 C32 8 44 16 58 16 C58 30 32 30 32 60Z" fill="#27ae60" />
           </svg>
           <div class="growth-icon-wrap">
             <svg viewBox="0 0 48 48" fill="none">
-              <circle cx="24" cy="24" r="22" fill="none" stroke="#27ae60" stroke-width="2.5"/>
-              <path d="M16 32 C16 26 20 22 24 22 C28 22 32 26 32 32" stroke="#27ae60" stroke-width="2.5" stroke-linecap="round"/>
-              <circle cx="24" cy="16" r="5" fill="none" stroke="#27ae60" stroke-width="2.5"/>
-              <path d="M10 36 Q24 30 38 36" stroke="#27ae60" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="24" cy="24" r="22" fill="none" stroke="#27ae60" stroke-width="2.5" />
+              <path d="M16 32 C16 26 20 22 24 22 C28 22 32 26 32 32" stroke="#27ae60" stroke-width="2.5"
+                stroke-linecap="round" />
+              <circle cx="24" cy="16" r="5" fill="none" stroke="#27ae60" stroke-width="2.5" />
+              <path d="M10 36 Q24 30 38 36" stroke="#27ae60" stroke-width="2" stroke-linecap="round" />
             </svg>
           </div>
           <h4>Public Speaking</h4>
@@ -1890,18 +2038,18 @@
         <!-- Card 2 — Coding & Tech · Blue -->
         <div class="growth-card growth-card-2">
           <svg class="growth-leaf" viewBox="0 0 64 64" fill="none">
-            <path d="M32 60 C32 30 6 30 6 16 C20 16 32 8 32 8 C32 8 44 16 58 16 C58 30 32 30 32 60Z" fill="#1976d2"/>
+            <path d="M32 60 C32 30 6 30 6 16 C20 16 32 8 32 8 C32 8 44 16 58 16 C58 30 32 30 32 60Z" fill="#1976d2" />
           </svg>
           <div class="growth-icon-wrap">
             <svg viewBox="0 0 48 48" fill="none">
-              <rect x="8" y="10" width="32" height="24" rx="3" stroke="#1976d2" stroke-width="2.5"/>
-              <path d="M8 18 L20 18" stroke="#1976d2" stroke-width="2"/>
-              <path d="M20 18 L20 14 L28 14 L28 18" stroke="#1976d2" stroke-width="2"/>
-              <path d="M28 18 L28 14 L36 14 L36 18" stroke="#1976d2" stroke-width="2"/>
-              <path d="M8 34 L40 34" stroke="#1976d2" stroke-width="2"/>
-              <path d="M14 34 L14 38" stroke="#1976d2" stroke-width="2"/>
-              <path d="M34 34 L34 38" stroke="#1976d2" stroke-width="2"/>
-              <path d="M14 38 L34 38" stroke="#1976d2" stroke-width="2"/>
+              <rect x="8" y="10" width="32" height="24" rx="3" stroke="#1976d2" stroke-width="2.5" />
+              <path d="M8 18 L20 18" stroke="#1976d2" stroke-width="2" />
+              <path d="M20 18 L20 14 L28 14 L28 18" stroke="#1976d2" stroke-width="2" />
+              <path d="M28 18 L28 14 L36 14 L36 18" stroke="#1976d2" stroke-width="2" />
+              <path d="M8 34 L40 34" stroke="#1976d2" stroke-width="2" />
+              <path d="M14 34 L14 38" stroke="#1976d2" stroke-width="2" />
+              <path d="M34 34 L34 38" stroke="#1976d2" stroke-width="2" />
+              <path d="M14 38 L34 38" stroke="#1976d2" stroke-width="2" />
             </svg>
           </div>
           <h4>Coding &amp; Tech</h4>
@@ -1911,11 +2059,12 @@
         <!-- Card 3 — Leadership · Orange -->
         <div class="growth-card growth-card-3">
           <svg class="growth-leaf" viewBox="0 0 64 64" fill="none">
-            <path d="M32 60 C32 30 6 30 6 16 C20 16 32 8 32 8 C32 8 44 16 58 16 C58 30 32 30 32 60Z" fill="#e67e22"/>
+            <path d="M32 60 C32 30 6 30 6 16 C20 16 32 8 32 8 C32 8 44 16 58 16 C58 30 32 30 32 60Z" fill="#e67e22" />
           </svg>
           <div class="growth-icon-wrap">
             <svg viewBox="0 0 48 48" fill="none">
-              <polygon points="24,6 30,18 44,18 33,27 37,41 24,33 11,41 15,27 4,18 18,18" stroke="#e67e22" stroke-width="2.5" stroke-linejoin="round"/>
+              <polygon points="24,6 30,18 44,18 33,27 37,41 24,33 11,41 15,27 4,18 18,18" stroke="#e67e22"
+                stroke-width="2.5" stroke-linejoin="round" />
             </svg>
           </div>
           <h4>Leadership</h4>
@@ -1925,16 +2074,16 @@
         <!-- Card 4 — Sports · Pink/Red -->
         <div class="growth-card growth-card-4">
           <svg class="growth-leaf" viewBox="0 0 64 64" fill="none">
-            <path d="M32 60 C32 30 6 30 6 16 C20 16 32 8 32 8 C32 8 44 16 58 16 C58 30 32 30 32 60Z" fill="#c62828"/>
+            <path d="M32 60 C32 30 6 30 6 16 C20 16 32 8 32 8 C32 8 44 16 58 16 C58 30 32 30 32 60Z" fill="#c62828" />
           </svg>
           <div class="growth-icon-wrap">
             <svg viewBox="0 0 48 48" fill="none">
-              <circle cx="24" cy="24" r="17" stroke="#c62828" stroke-width="2.5"/>
-              <path d="M24 7 L24 41" stroke="#c62828" stroke-width="1.5" stroke-dasharray="3,3"/>
-              <path d="M7 24 L41 24" stroke="#c62828" stroke-width="1.5" stroke-dasharray="3,3"/>
-              <path d="M12 12 Q24 16 36 12" stroke="#c62828" stroke-width="2" stroke-linecap="round"/>
-              <path d="M12 36 Q24 32 36 36" stroke="#c62828" stroke-width="2" stroke-linecap="round"/>
-              <circle cx="24" cy="24" r="4" fill="none" stroke="#c62828" stroke-width="2.5"/>
+              <circle cx="24" cy="24" r="17" stroke="#c62828" stroke-width="2.5" />
+              <path d="M24 7 L24 41" stroke="#c62828" stroke-width="1.5" stroke-dasharray="3,3" />
+              <path d="M7 24 L41 24" stroke="#c62828" stroke-width="1.5" stroke-dasharray="3,3" />
+              <path d="M12 12 Q24 16 36 12" stroke="#c62828" stroke-width="2" stroke-linecap="round" />
+              <path d="M12 36 Q24 32 36 36" stroke="#c62828" stroke-width="2" stroke-linecap="round" />
+              <circle cx="24" cy="24" r="4" fill="none" stroke="#c62828" stroke-width="2.5" />
             </svg>
           </div>
           <h4>Sports</h4>
@@ -1944,15 +2093,17 @@
         <!-- Card 5 — Creativity & Arts · Purple -->
         <div class="growth-card growth-card-5">
           <svg class="growth-leaf" viewBox="0 0 64 64" fill="none">
-            <path d="M32 60 C32 30 6 30 6 16 C20 16 32 8 32 8 C32 8 44 16 58 16 C58 30 32 30 32 60Z" fill="#673ab7"/>
+            <path d="M32 60 C32 30 6 30 6 16 C20 16 32 8 32 8 C32 8 44 16 58 16 C58 30 32 30 32 60Z" fill="#673ab7" />
           </svg>
           <div class="growth-icon-wrap">
             <svg viewBox="0 0 48 48" fill="none">
-              <circle cx="24" cy="24" r="18" stroke="#673ab7" stroke-width="2.5"/>
-              <circle cx="20" cy="20" r="4" fill="none" stroke="#673ab7" stroke-width="2"/>
-              <path d="M28 28 C32 32 36 34 36 34 C34 36 32 32 28 28Z" stroke="#673ab7" stroke-width="2" stroke-linejoin="round"/>
-              <path d="M14 32 C18 28 22 26 22 26" stroke="#673ab7" stroke-width="2" stroke-linecap="round"/>
-              <path d="M28 16 C34 16 38 20 38 20 C36 14 32 14 28 16Z" stroke="#673ab7" stroke-width="2" stroke-linejoin="round"/>
+              <circle cx="24" cy="24" r="18" stroke="#673ab7" stroke-width="2.5" />
+              <circle cx="20" cy="20" r="4" fill="none" stroke="#673ab7" stroke-width="2" />
+              <path d="M28 28 C32 32 36 34 36 34 C34 36 32 32 28 28Z" stroke="#673ab7" stroke-width="2"
+                stroke-linejoin="round" />
+              <path d="M14 32 C18 28 22 26 22 26" stroke="#673ab7" stroke-width="2" stroke-linecap="round" />
+              <path d="M28 16 C34 16 38 20 38 20 C36 14 32 14 28 16Z" stroke="#673ab7" stroke-width="2"
+                stroke-linejoin="round" />
             </svg>
           </div>
           <h4>Creativity &amp; Arts</h4>
@@ -1965,7 +2116,7 @@
     <!-- Bottom decorative wave -->
     <div class="growth-wave" aria-hidden="true">
       <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
-        <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80Z" fill="#f0f7f2"/>
+        <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80Z" fill="#f0f7f2" />
       </svg>
     </div>
   </section>
@@ -2028,7 +2179,8 @@
       <!-- LEFT -->
       <div class="left-panel">
         <h2>Parent feedback's</h2>
-        <p>Our parent community shares heartfelt experiences of their children's journey at VIS — from academic growth to personal development, and the nurturing environment that makes learning truly joyful.</p>
+        <p>Our parent community shares heartfelt experiences of their children's journey at VIS — from academic growth
+          to personal development, and the nurturing environment that makes learning truly joyful.</p>
         <div class="nav-buttons">
           <button class="nav-btn" id="prevBtn" aria-label="Previous">&#8592;</button>
           <button class="nav-btn" id="nextBtn" aria-label="Next">&#8594;</button>
@@ -2043,7 +2195,9 @@
           <!-- Card 1 -->
           <div class="card">
             <div class="stars">★★★★★</div>
-            <p class="review-text">The dual curriculum was the main reason we chose Seedling. My son started in CBSE and later switched to Cambridge — the school made it seamless. He's now confident, curious and loves coming to school every day.</p>
+            <p class="review-text">The dual curriculum was the main reason we chose Seedling. My son started in CBSE and
+              later switched to Cambridge — the school made it seamless. He's now confident, curious and loves coming to
+              school every day.</p>
             <div class="reviewer">
               <div class="reviewer-avatar" style="background: linear-gradient(135deg, #1a5276, #2e86c1);">K</div>
               <div class="reviewer-info">
@@ -2057,7 +2211,9 @@
           <!-- Card 2 -->
           <div class="card">
             <div class="stars">★★★★★</div>
-            <p class="review-text">The teachers genuinely care about every child. The campus is safe, the faculty is experienced, and the focus on skills alongside academics is exactly what we were looking for. Best decision we made for our daughter.</p>
+            <p class="review-text">The teachers genuinely care about every child. The campus is safe, the faculty is
+              experienced, and the focus on skills alongside academics is exactly what we were looking for. Best
+              decision we made for our daughter.</p>
             <div class="reviewer">
               <div class="reviewer-avatar" style="background: linear-gradient(135deg, #e67e22, #f39c12);">A</div>
               <div class="reviewer-info">
@@ -2071,7 +2227,9 @@
           <!-- Card 3 -->
           <div class="card">
             <div class="stars">★★★★★</div>
-            <p class="review-text">My child has grown so much here — not just in marks but in personality. The smart classrooms and experiential learning have made studies fun. I recommend Seedling to every parent who wants the best for their child.</p>
+            <p class="review-text">My child has grown so much here — not just in marks but in personality. The smart
+              classrooms and experiential learning have made studies fun. I recommend Seedling to every parent who wants
+              the best for their child.</p>
             <div class="reviewer">
               <div class="reviewer-avatar" style="background: linear-gradient(135deg, #1e8449, #27ae60);">A</div>
               <div class="reviewer-info">
@@ -2085,7 +2243,9 @@
           <!-- Card 4 -->
           <div class="card">
             <div class="stars">★★★★★</div>
-            <p class="review-text">Both my sons study at VIS and have learned a lot. My younger one even won 3rd prize in an interschool event thanks to the teachers' support. The methods, secure campus, and friendly staff make my kids love coming to school.</p>
+            <p class="review-text">Both my sons study at VIS and have learned a lot. My younger one even won 3rd prize
+              in an interschool event thanks to the teachers' support. The methods, secure campus, and friendly staff
+              make my kids love coming to school.</p>
             <div class="reviewer">
               <div class="reviewer-avatar" style="background: linear-gradient(135deg, #b5533c, #e07b5b);">P</div>
               <div class="reviewer-info">
@@ -2285,7 +2445,7 @@
     // UTM params
     function getUTM() {
       const p = {};
-      ['utm_source','utm_medium','utm_campaign'].forEach(k => {
+      ['utm_source', 'utm_medium', 'utm_campaign'].forEach(k => {
         const v = new URLSearchParams(window.location.search).get(k);
         if (v) p[k] = v;
       });
@@ -2318,7 +2478,7 @@
       }
 
       const btn = form.querySelector('.form-submit');
-      btn.value = 'Submitting...';
+      btn.classList.add('submitting');
       btn.disabled = true;
       showMsg(form, '', '');
 
@@ -2345,7 +2505,7 @@
       redirInput.value = redirectUrl.toString();
 
       // Add UTM fields to form
-      ['utm_source','utm_medium','utm_campaign'].forEach(k => {
+      ['utm_source', 'utm_medium', 'utm_campaign'].forEach(k => {
         if (utm[k]) {
           let inp = form.querySelector('[name="' + k + '"]');
           if (!inp) {
