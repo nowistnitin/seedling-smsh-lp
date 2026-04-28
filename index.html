@@ -2383,6 +2383,129 @@
     </div>
   </section>
 
+  <!-- CAMPUS LIFE -->
+  <section class="cl-section">
+    <div class="cl-top">
+
+      <!-- LEFT IMAGE -->
+      <div class="cl-img-left">
+        <img
+          src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80"
+          alt="Students at playground"
+        />
+      </div>
+
+      <!-- MIDDLE: Logo + Text + Nav -->
+      <div class="cl-middle">
+        <div>
+          <div class="cl-logo">
+            <div class="cl-logo-mark" style="font-family:'Playfair Display',serif;">Seedling</div>
+            <div class="cl-logo-sub">Seedling Public School</div>
+          </div>
+          <p class="cl-body-text">
+            Life at Seedling Public School is designed to inspire curiosity, creativity, and character.<br><br>
+            From bustling classrooms to energetic playgrounds and cultural stages, every corner of our campus nurtures confidence and lifelong friendships.
+          </p>
+        </div>
+        <ul class="cl-nav-list">
+          <li><a href="#">Student Life</a></li>
+          <li><a href="#">Arts &amp; Culture</a></li>
+          <li><a href="#">Athletics</a></li>
+          <li><a href="#">Clubs &amp; Societies</a></li>
+        </ul>
+      </div>
+
+      <!-- RIGHT: Big heading + Infinite slider -->
+      <div class="cl-right">
+        <div class="cl-title-block">
+          <div class="cl-eyebrow">Experience the campus</div>
+          <h1 class="cl-heading" style="font-family:'Playfair Display',serif;">Campus<br><em style="font-style:italic;color:var(--green);">Life</em></h1>
+        </div>
+
+        <!-- INFINITE SLIDER -->
+        <div class="cl-slider" id="clSlider">
+          <div class="cl-track-wrap">
+            <div class="cl-track" id="clTrack">
+
+              <!-- Original set -->
+              <div class="cl-slide">
+                <img src="https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=600&q=80" alt="Library"/>
+                <span class="cl-slide-label">Library</span>
+              </div>
+              <div class="cl-slide">
+                <img src="https://images.unsplash.com/photo-1519452575417-564c1401ecc0?w=600&q=80" alt="Sports"/>
+                <span class="cl-slide-label">Sports</span>
+              </div>
+              <div class="cl-slide">
+                <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&q=80" alt="Classrooms"/>
+                <span class="cl-slide-label">Classrooms</span>
+              </div>
+              <div class="cl-slide">
+                <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?w=600&q=80" alt="Arts"/>
+                <span class="cl-slide-label">Arts</span>
+              </div>
+              <div class="cl-slide">
+                <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=600&q=80" alt="Science Lab"/>
+                <span class="cl-slide-label">Science Lab</span>
+              </div>
+              <div class="cl-slide">
+                <img src="https://images.unsplash.com/photo-1598618443855-232ee0f819f6?w=600&q=80" alt="Music"/>
+                <span class="cl-slide-label">Music</span>
+              </div>
+              <div class="cl-slide">
+                <img src="https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?w=600&q=80" alt="Playground"/>
+                <span class="cl-slide-label">Playground</span>
+              </div>
+
+              <!-- Duplicate set for seamless loop -->
+              <div class="cl-slide">
+                <img src="https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=600&q=80" alt="Library"/>
+                <span class="cl-slide-label">Library</span>
+              </div>
+              <div class="cl-slide">
+                <img src="https://images.unsplash.com/photo-1519452575417-564c1401ecc0?w=600&q=80" alt="Sports"/>
+                <span class="cl-slide-label">Sports</span>
+              </div>
+              <div class="cl-slide">
+                <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&q=80" alt="Classrooms"/>
+                <span class="cl-slide-label">Classrooms</span>
+              </div>
+              <div class="cl-slide">
+                <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?w=600&q=80" alt="Arts"/>
+                <span class="cl-slide-label">Arts</span>
+              </div>
+              <div class="cl-slide">
+                <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=600&q=80" alt="Science Lab"/>
+                <span class="cl-slide-label">Science Lab</span>
+              </div>
+              <div class="cl-slide">
+                <img src="https://images.unsplash.com/photo-1598618443855-232ee0f819f6?w=600&q=80" alt="Music"/>
+                <span class="cl-slide-label">Music</span>
+              </div>
+              <div class="cl-slide">
+                <img src="https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?w=600&q=80" alt="Playground"/>
+                <span class="cl-slide-label">Playground</span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- DOTS -->
+        <div class="cl-dots" id="clDots">
+          <div class="cl-dot active"></div>
+          <div class="cl-dot"></div>
+          <div class="cl-dot"></div>
+          <div class="cl-dot"></div>
+          <div class="cl-dot"></div>
+          <div class="cl-dot"></div>
+          <div class="cl-dot"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- FACILITIES -->
   <section class="section facilities-section" id="facilities">
     <div class="container">
@@ -2642,129 +2765,6 @@
       setInterval(cycleClDots, clDuration / clDots.length);
     }
   </script>
-
-  <!-- CAMPUS LIFE -->
-  <section class="cl-section">
-    <div class="cl-top">
-
-      <!-- LEFT IMAGE -->
-      <div class="cl-img-left">
-        <img
-          src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80"
-          alt="Students at playground"
-        />
-      </div>
-
-      <!-- MIDDLE: Logo + Text + Nav -->
-      <div class="cl-middle">
-        <div>
-          <div class="cl-logo">
-            <div class="cl-logo-mark" style="font-family:'Playfair Display',serif;">Seedling</div>
-            <div class="cl-logo-sub">Seedling Public School</div>
-          </div>
-          <p class="cl-body-text">
-            Life at Seedling Public School is designed to inspire curiosity, creativity, and character.<br><br>
-            From bustling classrooms to energetic playgrounds and cultural stages, every corner of our campus nurtures confidence and lifelong friendships.
-          </p>
-        </div>
-        <ul class="cl-nav-list">
-          <li><a href="#">Student Life</a></li>
-          <li><a href="#">Arts &amp; Culture</a></li>
-          <li><a href="#">Athletics</a></li>
-          <li><a href="#">Clubs &amp; Societies</a></li>
-        </ul>
-      </div>
-
-      <!-- RIGHT: Big heading + Infinite slider -->
-      <div class="cl-right">
-        <div class="cl-title-block">
-          <div class="cl-eyebrow">Experience the campus</div>
-          <h1 class="cl-heading" style="font-family:'Playfair Display',serif;">Campus<br><em style="font-style:italic;color:var(--green);">Life</em></h1>
-        </div>
-
-        <!-- INFINITE SLIDER -->
-        <div class="cl-slider" id="clSlider">
-          <div class="cl-track-wrap">
-            <div class="cl-track" id="clTrack">
-
-              <!-- Original set -->
-              <div class="cl-slide">
-                <img src="https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=600&q=80" alt="Library"/>
-                <span class="cl-slide-label">Library</span>
-              </div>
-              <div class="cl-slide">
-                <img src="https://images.unsplash.com/photo-1519452575417-564c1401ecc0?w=600&q=80" alt="Sports"/>
-                <span class="cl-slide-label">Sports</span>
-              </div>
-              <div class="cl-slide">
-                <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&q=80" alt="Classrooms"/>
-                <span class="cl-slide-label">Classrooms</span>
-              </div>
-              <div class="cl-slide">
-                <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?w=600&q=80" alt="Arts"/>
-                <span class="cl-slide-label">Arts</span>
-              </div>
-              <div class="cl-slide">
-                <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=600&q=80" alt="Science Lab"/>
-                <span class="cl-slide-label">Science Lab</span>
-              </div>
-              <div class="cl-slide">
-                <img src="https://images.unsplash.com/photo-1598618443855-232ee0f819f6?w=600&q=80" alt="Music"/>
-                <span class="cl-slide-label">Music</span>
-              </div>
-              <div class="cl-slide">
-                <img src="https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?w=600&q=80" alt="Playground"/>
-                <span class="cl-slide-label">Playground</span>
-              </div>
-
-              <!-- Duplicate set for seamless loop -->
-              <div class="cl-slide">
-                <img src="https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=600&q=80" alt="Library"/>
-                <span class="cl-slide-label">Library</span>
-              </div>
-              <div class="cl-slide">
-                <img src="https://images.unsplash.com/photo-1519452575417-564c1401ecc0?w=600&q=80" alt="Sports"/>
-                <span class="cl-slide-label">Sports</span>
-              </div>
-              <div class="cl-slide">
-                <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&q=80" alt="Classrooms"/>
-                <span class="cl-slide-label">Classrooms</span>
-              </div>
-              <div class="cl-slide">
-                <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?w=600&q=80" alt="Arts"/>
-                <span class="cl-slide-label">Arts</span>
-              </div>
-              <div class="cl-slide">
-                <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=600&q=80" alt="Science Lab"/>
-                <span class="cl-slide-label">Science Lab</span>
-              </div>
-              <div class="cl-slide">
-                <img src="https://images.unsplash.com/photo-1598618443855-232ee0f819f6?w=600&q=80" alt="Music"/>
-                <span class="cl-slide-label">Music</span>
-              </div>
-              <div class="cl-slide">
-                <img src="https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?w=600&q=80" alt="Playground"/>
-                <span class="cl-slide-label">Playground</span>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-        <!-- DOTS -->
-        <div class="cl-dots" id="clDots">
-          <div class="cl-dot active"></div>
-          <div class="cl-dot"></div>
-          <div class="cl-dot"></div>
-          <div class="cl-dot"></div>
-          <div class="cl-dot"></div>
-          <div class="cl-dot"></div>
-          <div class="cl-dot"></div>
-        </div>
-
-      </div>
-    </div>
-  </section>
 
   <!-- ADMISSION PROCESS -->
   <section class="section process-section" id="process">
