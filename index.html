@@ -24,6 +24,8 @@
       --red-badge: #c0392b;
       --shadow: 0 4px 24px rgba(26, 82, 118, 0.10);
       --shadow-lg: 0 8px 40px rgba(26, 82, 118, 0.16);
+      --cream: #f7f4ef;
+      --off-white: #faf8f5;
     }
 
     *,
@@ -1690,6 +1692,270 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* ─── CAMPUS LIFE SECTION ─────────────────────────── */
+    .cl-section {
+      background: var(--off-white);
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cl-top {
+      display: grid;
+      grid-template-columns: 420px 340px 1fr;
+      min-height: 680px;
+      position: relative;
+    }
+
+    .cl-img-left {
+      position: relative;
+      overflow: hidden;
+    }
+    .cl-img-left img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 8s ease;
+    }
+    .cl-img-left:hover img { transform: scale(1.04); }
+
+    .cl-img-left::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, transparent 75%, rgba(247,244,239,0.6));
+      pointer-events: none;
+    }
+
+    .cl-middle {
+      padding: 56px 40px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-right: 1px solid var(--border);
+      background: var(--off-white);
+    }
+
+    .cl-logo {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 40px;
+    }
+
+    .cl-logo-mark {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--green);
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .cl-logo-sub {
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green);
+      font-weight: 500;
+    }
+
+    .cl-body-text {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.8;
+      font-weight: 300;
+      margin-bottom: 48px;
+      flex: 1;
+    }
+
+    .cl-nav-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .cl-nav-list li {
+      border-top: 1px solid var(--border);
+      padding: 14px 0;
+    }
+    .cl-nav-list li:last-child { border-bottom: 1px solid var(--border); }
+
+    .cl-nav-list a {
+      text-decoration: none;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: color 0.25s;
+      letter-spacing: -0.01em;
+    }
+    .cl-nav-list a:hover { color: var(--green); }
+    .cl-nav-list a::after {
+      content: '↗';
+      font-size: 0.9rem;
+      opacity: 0;
+      transform: translateX(-6px);
+      transition: opacity 0.25s, transform 0.25s;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .cl-nav-list a:hover::after { opacity: 1; transform: translateX(0); }
+
+    .cl-right {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .cl-title-block {
+      padding: 48px 56px 32px;
+      background: var(--off-white);
+      flex-shrink: 0;
+    }
+
+    .cl-eyebrow {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .cl-eyebrow::before {
+      content: '';
+      width: 28px; height: 1px;
+      background: var(--green);
+    }
+
+    .cl-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3.5rem, 6vw, 6rem);
+      font-weight: 700;
+      line-height: 0.92;
+      color: var(--primary);
+      letter-spacing: -0.03em;
+    }
+
+    .cl-slider {
+      flex: 1;
+      overflow: hidden;
+      position: relative;
+      min-height: 400px;
+      background: var(--cream);
+    }
+
+    .cl-slider::before,
+    .cl-slider::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 80px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .cl-slider::before { left: 0; background: linear-gradient(to right, var(--cream), transparent); }
+    .cl-slider::after  { right: 0; background: linear-gradient(to left, var(--cream), transparent); }
+
+    .cl-track-wrap {
+      display: flex;
+      height: 100%;
+    }
+
+    .cl-track {
+      display: flex;
+      gap: 16px;
+      align-items: stretch;
+      height: 100%;
+      animation: infiniteScroll 28s linear infinite;
+      will-change: transform;
+    }
+    .cl-track:hover { animation-play-state: paused; }
+
+    @keyframes infiniteScroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .cl-slide {
+      flex-shrink: 0;
+      width: 300px;
+      height: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .cl-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+    .cl-slide:hover img { transform: scale(1.07); }
+
+    .cl-slide-label {
+      position: absolute;
+      bottom: 14px; left: 14px;
+      background: rgba(247,244,239,0.92);
+      backdrop-filter: blur(8px);
+      border-radius: 6px;
+      padding: 5px 12px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: var(--text);
+      text-transform: uppercase;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.3s, transform 0.3s;
+    }
+    .cl-slide:hover .cl-slide-label { opacity: 1; transform: translateY(0); }
+
+    .cl-dots {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 18px 0 10px;
+      background: var(--off-white);
+      flex-shrink: 0;
+    }
+    .cl-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #ccc;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .cl-dot.active {
+      background: var(--text);
+      transform: scale(1.3);
+    }
+
+    @media (max-width: 1100px) {
+      .cl-top { grid-template-columns: 360px 300px 1fr; }
+    }
+    @media (max-width: 900px) {
+      .cl-top {
+        grid-template-columns: 1fr;
+        grid-template-rows: 380px auto auto;
+      }
+      .cl-middle { border-right: none; border-bottom: 1px solid var(--border); }
+      .cl-right { min-height: 560px; }
+      .cl-title-block { padding: 36px 28px 20px; }
+      .cl-slider { min-height: 300px; }
+      .cl-slide { width: 240px; }
+    }
   </style>
 </head>
 
@@ -2360,6 +2626,145 @@
 
     init();
   </script>
+  <script>
+    // Campus life dot sync with infinite scroll
+    const clDots = document.querySelectorAll('.cl-dot');
+    const clDuration = 28000;
+    let clDotIndex = 0;
+
+    function cycleClDots() {
+      clDots.forEach(d => d.classList.remove('active'));
+      clDotIndex = (clDotIndex + 1) % clDots.length;
+      if (clDots[clDotIndex]) clDots[clDotIndex].classList.add('active');
+    }
+
+    if (clDots.length) {
+      setInterval(cycleClDots, clDuration / clDots.length);
+    }
+  </script>
+
+  <!-- CAMPUS LIFE -->
+  <section class="cl-section">
+    <div class="cl-top">
+
+      <!-- LEFT IMAGE -->
+      <div class="cl-img-left">
+        <img
+          src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80"
+          alt="Students at playground"
+        />
+      </div>
+
+      <!-- MIDDLE: Logo + Text + Nav -->
+      <div class="cl-middle">
+        <div>
+          <div class="cl-logo">
+            <div class="cl-logo-mark" style="font-family:'Playfair Display',serif;">Seedling</div>
+            <div class="cl-logo-sub">Seedling Public School</div>
+          </div>
+          <p class="cl-body-text">
+            Life at Seedling Public School is designed to inspire curiosity, creativity, and character.<br><br>
+            From bustling classrooms to energetic playgrounds and cultural stages, every corner of our campus nurtures confidence and lifelong friendships.
+          </p>
+        </div>
+        <ul class="cl-nav-list">
+          <li><a href="#">Student Life</a></li>
+          <li><a href="#">Arts &amp; Culture</a></li>
+          <li><a href="#">Athletics</a></li>
+          <li><a href="#">Clubs &amp; Societies</a></li>
+        </ul>
+      </div>
+
+      <!-- RIGHT: Big heading + Infinite slider -->
+      <div class="cl-right">
+        <div class="cl-title-block">
+          <div class="cl-eyebrow">Experience the campus</div>
+          <h1 class="cl-heading" style="font-family:'Playfair Display',serif;">Campus<br><em style="font-style:italic;color:var(--green);">Life</em></h1>
+        </div>
+
+        <!-- INFINITE SLIDER -->
+        <div class="cl-slider" id="clSlider">
+          <div class="cl-track-wrap">
+            <div class="cl-track" id="clTrack">
+
+              <!-- Original set -->
+              <div class="cl-slide">
+                <img src="https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=600&q=80" alt="Library"/>
+                <span class="cl-slide-label">Library</span>
+              </div>
+              <div class="cl-slide">
+                <img src="https://images.unsplash.com/photo-1519452575417-564c1401ecc0?w=600&q=80" alt="Sports"/>
+                <span class="cl-slide-label">Sports</span>
+              </div>
+              <div class="cl-slide">
+                <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&q=80" alt="Classrooms"/>
+                <span class="cl-slide-label">Classrooms</span>
+              </div>
+              <div class="cl-slide">
+                <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?w=600&q=80" alt="Arts"/>
+                <span class="cl-slide-label">Arts</span>
+              </div>
+              <div class="cl-slide">
+                <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=600&q=80" alt="Science Lab"/>
+                <span class="cl-slide-label">Science Lab</span>
+              </div>
+              <div class="cl-slide">
+                <img src="https://images.unsplash.com/photo-1598618443855-232ee0f819f6?w=600&q=80" alt="Music"/>
+                <span class="cl-slide-label">Music</span>
+              </div>
+              <div class="cl-slide">
+                <img src="https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?w=600&q=80" alt="Playground"/>
+                <span class="cl-slide-label">Playground</span>
+              </div>
+
+              <!-- Duplicate set for seamless loop -->
+              <div class="cl-slide">
+                <img src="https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=600&q=80" alt="Library"/>
+                <span class="cl-slide-label">Library</span>
+              </div>
+              <div class="cl-slide">
+                <img src="https://images.unsplash.com/photo-1519452575417-564c1401ecc0?w=600&q=80" alt="Sports"/>
+                <span class="cl-slide-label">Sports</span>
+              </div>
+              <div class="cl-slide">
+                <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&q=80" alt="Classrooms"/>
+                <span class="cl-slide-label">Classrooms</span>
+              </div>
+              <div class="cl-slide">
+                <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?w=600&q=80" alt="Arts"/>
+                <span class="cl-slide-label">Arts</span>
+              </div>
+              <div class="cl-slide">
+                <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=600&q=80" alt="Science Lab"/>
+                <span class="cl-slide-label">Science Lab</span>
+              </div>
+              <div class="cl-slide">
+                <img src="https://images.unsplash.com/photo-1598618443855-232ee0f819f6?w=600&q=80" alt="Music"/>
+                <span class="cl-slide-label">Music</span>
+              </div>
+              <div class="cl-slide">
+                <img src="https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?w=600&q=80" alt="Playground"/>
+                <span class="cl-slide-label">Playground</span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- DOTS -->
+        <div class="cl-dots" id="clDots">
+          <div class="cl-dot active"></div>
+          <div class="cl-dot"></div>
+          <div class="cl-dot"></div>
+          <div class="cl-dot"></div>
+          <div class="cl-dot"></div>
+          <div class="cl-dot"></div>
+          <div class="cl-dot"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <!-- ADMISSION PROCESS -->
   <section class="section process-section" id="process">
