@@ -1850,8 +1850,8 @@
       flex: 1;
       overflow: hidden;
       position: relative;
-      min-height: 400px;
       background: var(--cream);
+      height: 260px;
     }
 
     .cl-slider::before,
@@ -1859,12 +1859,12 @@
       content: '';
       position: absolute;
       top: 0; bottom: 0;
-      width: 80px;
+      width: 0;
       z-index: 2;
       pointer-events: none;
     }
-    .cl-slider::before { left: 0; background: linear-gradient(to right, var(--cream), transparent); }
-    .cl-slider::after  { right: 0; background: linear-gradient(to left, var(--cream), transparent); }
+    .cl-slider::before { left: 0; background: none; }
+    .cl-slider::after  { right: 0; background: none; }
 
     .cl-track-wrap {
       display: flex;
@@ -1888,8 +1888,8 @@
 
     .cl-slide {
       flex-shrink: 0;
-      width: 300px;
-      height: 100%;
+      width: 260px;
+      height: 260px;
       border-radius: 10px;
       overflow: hidden;
       position: relative;
@@ -2407,12 +2407,11 @@
             From bustling classrooms to energetic playgrounds and cultural stages, every corner of our campus nurtures confidence and lifelong friendships.
           </p>
         </div>
-        <ul class="cl-nav-list">
-          <li><a href="#">Student Life</a></li>
-          <li><a href="#">Arts &amp; Culture</a></li>
-          <li><a href="#">Athletics</a></li>
-          <li><a href="#">Clubs &amp; Societies</a></li>
-        </ul>
+        <p >
+          Student Life
+Arts & Culture
+Athletics
+        </p>
       </div>
 
       <!-- RIGHT: Big heading + Infinite slider -->
