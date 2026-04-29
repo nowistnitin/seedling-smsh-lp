@@ -13,8 +13,8 @@
   <style>
     :root {
       --primary: #1a5276;
-      --accent: #e67e22;
-      --accent2: #f39c12;
+      --accent: #26419f;
+      --accent2: #1a5276;
       --light: #f4f8fb;
       --white: #ffffff;
       --text: #1c2b3a;
@@ -89,7 +89,7 @@
     }
 
     .badge.orange {
-      background: #fef5e7;
+      background: #eaf4fb;
       color: var(--accent);
     }
 
@@ -103,7 +103,7 @@
       font-weight: 700;
       cursor: pointer;
       transition: all .25s;
-      box-shadow: 0 4px 16px rgba(230, 126, 34, .35);
+      box-shadow: 0 4px 16px rgba(38, 65, 159, .35);
       letter-spacing: .3px;
       text-decoration: none;
       display: inline-block;
@@ -111,7 +111,7 @@
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(230, 126, 34, .45);
+      box-shadow: 0 8px 24px rgba(38, 65, 159, .45);
     }
 
     .btn-outline {
@@ -243,91 +243,37 @@
 
     /* HERO */
     .hero {
-      background: url('assets/hero.png') center/cover no-repeat;
+      background: #fdfaf5;
+      background-image: 
+        radial-gradient(at 0% 0%, hsla(203, 76%, 95%, 1) 0, transparent 50%), 
+        radial-gradient(at 50% 0%, hsla(36, 100%, 97%, 1) 0, transparent 50%), 
+        radial-gradient(at 100% 0%, hsla(203, 76%, 95%, 1) 0, transparent 50%), 
+        radial-gradient(at 50% 100%, hsla(36, 100%, 97%, 1) 0, transparent 50%);
       padding: 64px 0 56px;
       overflow: hidden;
-      min-height: 100vh;
+      position: relative;
     }
 
-    .hero>.container {
-      max-width: 100%;
-      padding: 0 40px;
-      display: flex;
-      justify-content: flex-end;
-    }
-
-    .hero-image-mobile {
-      display: none;
-    }
-
-    .hero-form-mobile {
-      display: none;
-    }
-
-    .hero-form-mobile .lead-form-card {
-      border-radius: 16px;
-      max-width: 520px;
-      margin: 0 auto;
-    }
-
-    @media (max-width: 768px) {
-      .hero {
-        background: none;
-        align-items: flex-start;
-        padding: 0;
-      }
-
-      .hero>.container {
-        padding: 0;
-        display: block;
-      }
-
-      .hero-grid {
-        display: none !important;
-      }
-
-      .hero-image-mobile {
-        display: block !important;
-      }
-
-      .hero-image-mobile img {
-        width: 100%;
-        height: auto;
-        display: block;
-      }
-
-      .hero-form-mobile {
-        display: block !important;
-        padding: 40px 20px 20px;
-        background: #001c7d;
-        height: 350px;
-      }
-    }
-
-    @media (max-width: 900px) {
-      .lead-form-card {
-        max-width: 520px;
-        margin: 0 auto;
-        position: relative;
-        /* top: -182px; */
-      }
-    }
-
-    @media (max-width: 750px) {
-      .lead-form-card {
-        top: -265px;
-      }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: 
+        linear-gradient(rgba(26, 82, 118, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(26, 82, 118, 0.08) 1px, transparent 1px);
+      background-size: 40px 40px;
+      mask-image: radial-gradient(ellipse at center, black, transparent 80%);
+      pointer-events: none;
     }
 
     .hero-grid {
-      display: flex;
-      justify-content: flex-end;
+      display: grid;
+      grid-template-columns: 1fr 420px;
       gap: 48px;
       align-items: start;
-    }
-
-    .hero-grid>#enquire {
-      width: 65%;
     }
 
     .hero-eyebrow {
@@ -349,15 +295,8 @@
     }
 
     @keyframes pulse {
-
-      0%,
-      100% {
-        opacity: 1
-      }
-
-      50% {
-        opacity: .7
-      }
+      0%,100% { opacity: 1 }
+      50% { opacity: .7 }
     }
 
     .hero h1 {
@@ -1615,7 +1554,7 @@
       font-size: 18px;
       font-weight: 700;
       text-decoration: none;
-      box-shadow: 0 4px 20px rgba(230, 126, 34, 0.4);
+      box-shadow: 0 4px 20px rgba(38, 65, 159, 0.4);
       cursor: pointer;
       pointer-events: auto;
     }
@@ -1670,6 +1609,61 @@
       .section {
         padding: 35px 0;
       }
+
+      .hero {
+        padding: 32px 0 20px;
+      }
+
+      .hero-eyebrow {
+        gap: 6px;
+        margin-bottom: 12px;
+      }
+
+      .urgency-chip, .badge {
+        font-size: 11px;
+        padding: 4px 10px;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+      }
+
+      .hero-sub {
+        font-size: 15px;
+        margin-bottom: 10px;
+      }
+
+      .hero-tagline {
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+
+      .trust-badges {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+
+      .trust-badges .badge {
+        width: 100%;
+        justify-content: center;
+        padding: 8px 4px;
+      }
+
+      .hero-grid {
+        gap: 20px;
+      }
+
+      .hero-cta-row, .hero-cta-sub {
+        display: none;
+      }
+
+      .lead-form-card {
+        padding: 24px 20px;
+      }
+    }
 
       .process-steps {
         grid-template-columns: 1fr 1fr;
@@ -2078,6 +2072,28 @@
   <section class="hero" id="hero">
     <div class="container">
       <div class="hero-grid">
+        <!-- Left: Copy -->
+        <div>
+          <div class="hero-eyebrow">
+            <span class="urgency-chip">🔴 Admissions Open 2026–27</span>
+            <span class="badge green">✓ Seats Filling Fast</span>
+          </div>
+          <h1>CBSE &amp; Cambridge<br>School in <em>Jaipur</em> —<br>Admissions Open</h1>
+          <p class="hero-sub">Choose the right path for your child – strong academics or global learning</p>
+          <p class="hero-tagline">"One School. Two Curriculums."</p>
+          <div class="trust-badges">
+            <span class="badge">🎓 CBSE &amp; Cambridge</span>
+            <span class="badge">💡 Smart Classrooms</span>
+            <span class="badge green">🛡️ Safe Campus</span>
+            <span class="badge orange">⭐ Est. 1992</span>
+          </div>
+          <div class="hero-cta-row">
+            <a href="#enquire" class="btn-primary" style="font-size:17px;padding:17px 36px;">Get Admission Details →</a>
+            <a href="tel:+917413012351" class="btn-outline">📞 Call Now</a>
+          </div>
+          <p class="hero-cta-sub">⚠️ Limited seats available. Enquire today to secure your child's future.</p>
+        </div>
+
         <!-- Right: Lead Form -->
         <div id="enquire">
           <div class="lead-form-card">
@@ -2101,18 +2117,12 @@
               <div class="form-group">
                 <select class="form-select" name="School" required="">
                   <option value="">Select School</option>
-                  <option value="Seedling Public School (CBSE), Jawahar Nagar, Jaipur">Seedling Public School (CBSE),
-                    Jawahar Nagar, Jaipur</option>
-                  <option value="Seedling International Academy, Jawahar Nagar, Jaipur (Cambridge Board)">Seedling
-                    International Academy, Jawahar Nagar, Jaipur (Cambridge Board)</option>
-                  <option value="Seedling Modern High School (CBSE), Durgapura, Jaipur">Seedling Modern High School
-                    (CBSE), Durgapura, Jaipur</option>
-                  <option value="Seedling Modern International Academy, (Cambridge Board) Durgapura, Jaipur">Seedling
-                    Modern International Academy, (Cambridge Board) Durgapura, Jaipur</option>
-                  <option value="Seedling Wonderland Kids League (Jawahar Nagar)">Seedling Wonderland Kids League
-                    (Jawahar Nagar)</option>
-                  <option value="Seedling Wonderland Kids League (Durgapura)">Seedling Wonderland Kids League
-                    (Durgapura)</option>
+                  <option value="Seedling Public School (CBSE), Jawahar Nagar, Jaipur">Seedling Public School (CBSE), Jawahar Nagar, Jaipur</option>
+                  <option value="Seedling International Academy, Jawahar Nagar, Jaipur (Cambridge Board)">Seedling International Academy, Jawahar Nagar, Jaipur (Cambridge Board)</option>
+                  <option value="Seedling Modern High School (CBSE), Durgapura, Jaipur">Seedling Modern High School (CBSE), Durgapura, Jaipur</option>
+                  <option value="Seedling Modern International Academy, (Cambridge Board) Durgapura, Jaipur">Seedling Modern International Academy, (Cambridge Board) Durgapura, Jaipur</option>
+                  <option value="Seedling Wonderland Kids League (Jawahar Nagar)">Seedling Wonderland Kids League (Jawahar Nagar)</option>
+                  <option value="Seedling Wonderland Kids League (Durgapura)">Seedling Wonderland Kids League (Durgapura)</option>
                 </select>
               </div>
               <div class="form-group">
@@ -2140,75 +2150,6 @@
               </div>
               <button type="submit" class="btn-primary form-submit">Submit<span class="btn-text"></span></button>
               <div class="form-msg" style="display:none;"></div>
-            </form>
-          </div>
-        </div>
-      </div>
-      <!-- Mobile: Image then Form -->
-      <div class="hero-image-mobile">
-        <img src="assets/hero-mob.png" alt="Seedling Public School">
-      </div>
-      <div class="hero-form-mobile" id="enquire-mobile">
-        <div class="lead-form-card">
-          <form>
-            <input type="hidden" name="enquiry_page" value="Home Page Mobile Form">
-            <h3>Enquire Now</h3>
-            <div class="form-row">
-              <div class="form-group">
-                <input type="text" placeholder="Name" name="Name" autocomplete="off" required="">
-              </div>
-              <div class="form-group">
-                <input type="email" placeholder="Email" name="Email" autocomplete="off" required="">
-              </div>
-            </div>
-            <div class="form-group">
-              <input type="text" placeholder="Phone Number" pattern="[6-9]\d{9}"
-                title="Should start with 6, 7, 8 or 9 and be exactly 10 digits"
-                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1').slice(0, 10);"
-                minlength="10" maxlength="10" name="Phone" autocomplete="off" required="">
-            </div>
-            <div class="form-group">
-              <select class="form-select" name="School" required="">
-                <option value="">Select School</option>
-                <option value="Seedling Public School (CBSE), Jawahar Nagar, Jaipur">Seedling Public School (CBSE),
-                  Jawahar Nagar, Jaipur</option>
-                <option value="Seedling International Academy, Jawahar Nagar, Jaipur (Cambridge Board)">Seedling
-                  International Academy, Jawahar Nagar, Jaipur (Cambridge Board)</option>
-                <option value="Seedling Modern High School (CBSE), Durgapura, Jaipur">Seedling Modern High School
-                  (CBSE), Durgapura, Jaipur</option>
-                <option value="Seedling Modern International Academy, (Cambridge Board) Durgapura, Jaipur">Seedling
-                  Modern International Academy, (Cambridge Board) Durgapura, Jaipur</option>
-                <option value="Seedling Wonderland Kids League (Jawahar Nagar)">Seedling Wonderland Kids League (Jawahar
-                  Nagar)</option>
-                <option value="Seedling Wonderland Kids League (Durgapura)">Seedling Wonderland Kids League (Durgapura)
-                </option>
-              </select>
-            </div>
-            <div class="form-group">
-              <select class="form-select" name="Class" required="">
-                <option value="">Select Class</option>
-                <option value="Pre Nursery">Pre Nursery</option>
-                <option value="Nursery">Nursery</option>
-                <option value="LKG">LKG</option>
-                <option value="UKG">UKG</option>
-                <option value="Class I">Class I</option>
-                <option value="Class II">Class II</option>
-                <option value="Class III">Class III</option>
-                <option value="Class IV">Class IV</option>
-                <option value="Class V">Class V</option>
-                <option value="Class VI">Class VI</option>
-                <option value="Class VII">Class VII</option>
-                <option value="Class VIII">Class VIII</option>
-                <option value="Class IX">Class IX</option>
-                <option value="Class X">Class X</option>
-                <option value="Class XI">Class XI</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <textarea name="Message" placeholder="Message" rows="3" required=""></textarea>
-            </div>
-            <button type="submit" class="btn-primary form-submit">Submit<span class="btn-text"></span></button>
-            <div class="form-msg" style="display:none;"></div>
           </form>
         </div>
       </div>

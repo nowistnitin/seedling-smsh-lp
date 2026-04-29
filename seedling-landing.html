@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Admissions Open 2026–27 | Seedling Public School – CBSE & Cambridge, Jaipur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #1a5276;
+    --accent: #e67e22;
+    --accent2: #f39c12;
+    --light: #f4f8fb;
+    --white: #ffffff;
+    --text: #1c2b3a;
+    --muted: #5d7a8c;
+    --border: #dce8f0;
+    --green: #1e8449;
+    --red-badge: #c0392b;
+    --shadow: 0 4px 24px rgba(26,82,118,0.10);
+    --shadow-lg: 0 8px 40px rgba(26,82,118,0.16);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text); background: var(--white); line-height: 1.6; }
+
+  /* UTILITY */
+  .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+  .section { padding: 72px 0; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 40px); color: var(--primary); margin-bottom: 12px; }
+  .section-sub { color: var(--muted); font-size: 17px; max-width: 560px; }
+  .badge { display: inline-flex; align-items: center; gap: 6px; background: #eaf4fb; color: var(--primary); border-radius: 30px; padding: 6px 14px; font-size: 13px; font-weight: 600; }
+  .badge.green { background: #eafaf1; color: var(--green); }
+  .badge.orange { background: #fef5e7; color: var(--accent); }
+  .btn-primary { background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #fff; border: none; border-radius: 10px; padding: 15px 30px; font-size: 16px; font-weight: 700; cursor: pointer; transition: all .25s; box-shadow: 0 4px 16px rgba(230,126,34,.35); letter-spacing: .3px; text-decoration: none; display: inline-block; }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(230,126,34,.45); }
+  .btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); border-radius: 10px; padding: 13px 28px; font-size: 15px; font-weight: 700; cursor: pointer; transition: all .25s; text-decoration: none; display: inline-block; }
+  .btn-outline:hover { background: var(--primary); color: #fff; }
+  .divider { width: 60px; height: 4px; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 4px; margin: 16px 0 24px; }
+
+  /* NAVBAR */
+  .navbar { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 12px rgba(26,82,118,.07); }
+  .navbar-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; max-width: 1140px; margin: 0 auto; }
+  .navbar-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .navbar-logo-icon { width: 42px; height: 42px; background: var(--primary); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+  .navbar-logo-icon svg { width: 24px; height: 24px; fill: #fff; }
+  .navbar-brand { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--primary); line-height: 1.2; }
+  .navbar-brand span { display: block; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 12px; font-weight: 500; color: var(--muted); }
+  .navbar-cta { display: flex; align-items: center; gap: 12px; }
+  .navbar-phone { color: var(--primary); font-weight: 700; font-size: 15px; text-decoration: none; display: flex; align-items: center; gap: 6px; }
+  .navbar-phone svg { width: 16px; height: 16px; fill: var(--accent); }
+
+  /* HERO */
+  .hero { background: linear-gradient(135deg, #eaf4fb 0%, #fdf6ee 60%, #fef9f0 100%); padding: 64px 0 56px; overflow: hidden; }
+  .hero-grid { display: grid; grid-template-columns: 1fr 420px; gap: 48px; align-items: start; }
+  .hero-eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+  .urgency-chip { background: var(--red-badge); color: #fff; border-radius: 30px; padding: 5px 14px; font-size: 13px; font-weight: 700; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.7} }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(30px, 4vw, 48px); color: var(--primary); line-height: 1.18; margin-bottom: 16px; }
+  .hero h1 em { color: var(--accent); font-style: normal; }
+  .hero-sub { font-size: 18px; color: var(--muted); margin-bottom: 14px; font-weight: 500; }
+  .hero-tagline { font-size: 20px; font-weight: 700; color: var(--primary); background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 28px; }
+  .trust-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px; }
+  .hero-cta-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+  .hero-cta-sub { font-size: 13px; color: var(--muted); margin-top: 10px; }
+
+  /* LEAD FORM */
+  .lead-form-card { background: var(--white); border-radius: 20px; box-shadow: var(--shadow-lg); padding: 32px 28px; border: 1px solid var(--border); position: relative; overflow: hidden; }
+  .lead-form-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, var(--primary), var(--accent)); }
+  .lead-form-card h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--primary); margin-bottom: 6px; }
+  .lead-form-card p { font-size: 14px; color: var(--muted); margin-bottom: 22px; }
+  .form-group { margin-bottom: 14px; }
+  .form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 5px; }
+  .form-group input, .form-group select { width: 100%; padding: 11px 14px; border: 1.5px solid var(--border); border-radius: 9px; font-size: 14px; font-family: inherit; color: var(--text); background: #f9fbfd; transition: border .2s; outline: none; }
+  .form-group input:focus, .form-group select:focus { border-color: var(--primary); background: #fff; }
+  .form-submit { width: 100%; padding: 15px; font-size: 16px; font-weight: 700; margin-top: 6px; }
+  .form-urgency { text-align: center; font-size: 13px; font-weight: 600; color: var(--red-badge); margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 5px; }
+
+  /* WHY CHOOSE */
+  .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 40px; }
+  .why-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 28px 22px; text-align: center; box-shadow: var(--shadow); transition: transform .25s, box-shadow .25s; }
+  .why-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+  .why-card-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 26px; }
+  .why-card h4 { font-weight: 700; font-size: 16px; color: var(--primary); margin-bottom: 7px; }
+  .why-card p { font-size: 14px; color: var(--muted); }
+
+  /* CURRICULUM */
+  .curriculum-section { background: var(--light); }
+  .curriculum-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 40px; }
+  .curriculum-card { background: var(--white); border-radius: 20px; padding: 36px 32px; box-shadow: var(--shadow); border: 2px solid transparent; transition: all .25s; }
+  .curriculum-card:hover { border-color: var(--primary); box-shadow: var(--shadow-lg); }
+  .curriculum-card.cambridge:hover { border-color: var(--accent); }
+  .curriculum-label { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; margin-bottom: 16px; padding: 6px 14px; border-radius: 30px; }
+  .curriculum-label.cbse { background: #eaf4fb; color: var(--primary); }
+  .curriculum-label.cambridge { background: #fef5e7; color: var(--accent); }
+  .curriculum-card h3 { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--primary); margin-bottom: 16px; }
+  .curriculum-list { list-style: none; }
+  .curriculum-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 15px; color: var(--text); padding: 8px 0; border-bottom: 1px solid var(--border); }
+  .curriculum-list li:last-child { border-bottom: none; }
+  .curriculum-list li::before { content: '✓'; font-weight: 700; color: var(--green); margin-top: 1px; flex-shrink: 0; }
+
+  /* COMPARISON TABLE */
+  .compare-wrap { margin-top: 40px; background: var(--white); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); }
+  .compare-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  .compare-table th { background: var(--primary); color: #fff; padding: 16px 20px; text-align: center; font-weight: 700; }
+  .compare-table th:first-child { background: #13405e; text-align: left; }
+  .compare-table td { padding: 14px 20px; text-align: center; border-bottom: 1px solid var(--border); }
+  .compare-table td:first-child { text-align: left; font-weight: 600; color: var(--text); }
+  .compare-table tr:last-child td { border-bottom: none; }
+  .compare-table tr:nth-child(even) td { background: #f9fbfd; }
+  .tick { color: var(--green); font-weight: 700; font-size: 18px; }
+  .cross { color: #bbb; font-weight: 700; font-size: 18px; }
+
+  /* SKILLS */
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 20px; margin-top: 40px; }
+  .skill-card { text-align: center; background: var(--white); border-radius: 16px; padding: 28px 16px; border: 1px solid var(--border); box-shadow: var(--shadow); transition: all .25s; }
+  .skill-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--accent); }
+  .skill-icon { font-size: 36px; margin-bottom: 12px; display: block; }
+  .skill-card h4 { font-weight: 700; font-size: 15px; color: var(--primary); margin-bottom: 6px; }
+  .skill-card p { font-size: 13px; color: var(--muted); }
+
+  /* FACILITIES */
+  .facilities-section { background: var(--light); }
+  .facilities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 40px; }
+  .facility-card { background: var(--white); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); transition: all .25s; border: 1px solid var(--border); }
+  .facility-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+  .facility-img { width: 100%; height: 140px; display: flex; align-items: center; justify-content: center; font-size: 48px; }
+  .facility-img.cl { background: linear-gradient(135deg, #eaf4fb, #d5eaf8); }
+  .facility-img.lab { background: linear-gradient(135deg, #eafaf1, #c8f0db); }
+  .facility-img.sports { background: linear-gradient(135deg, #fef5e7, #fde8c0); }
+  .facility-img.art { background: linear-gradient(135deg, #fdf0f8, #f5c9e8); }
+  .facility-img.safe { background: linear-gradient(135deg, #eafaf1, #b8e6ca); }
+  .facility-body { padding: 18px; }
+  .facility-body h4 { font-weight: 700; font-size: 15px; color: var(--primary); margin-bottom: 5px; }
+  .facility-body p { font-size: 13px; color: var(--muted); }
+
+  /* TESTIMONIALS */
+  .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
+  .testimonial-card { background: var(--white); border-radius: 20px; padding: 28px 26px; box-shadow: var(--shadow); border: 1px solid var(--border); position: relative; }
+  .testimonial-card::before { content: '"'; position: absolute; top: 16px; right: 24px; font-size: 72px; font-family: Georgia, serif; color: var(--border); line-height: 1; }
+  .stars { color: #f39c12; font-size: 16px; margin-bottom: 14px; }
+  .testimonial-text { font-size: 15px; color: var(--text); line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+  .testimonial-author { display: flex; align-items: center; gap: 12px; }
+  .author-avatar { width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px; color: #fff; flex-shrink: 0; }
+  .author-name { font-weight: 700; font-size: 15px; color: var(--primary); }
+  .author-meta { font-size: 13px; color: var(--muted); }
+
+  /* ADMISSION PROCESS */
+  .process-section { background: var(--light); }
+  .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 48px; position: relative; }
+  .process-steps::before { content: ''; position: absolute; top: 36px; left: 12%; right: 12%; height: 2px; background: linear-gradient(90deg, var(--primary), var(--accent)); z-index: 0; }
+  .process-step { text-align: center; position: relative; z-index: 1; }
+  .step-num { width: 72px; height: 72px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; margin: 0 auto 16px; border: 3px solid var(--white); box-shadow: var(--shadow-lg); background: var(--white); }
+  .step-num.s1 { background: linear-gradient(135deg, #eaf4fb, #c5dff1); }
+  .step-num.s2 { background: linear-gradient(135deg, #fef5e7, #fde0b8); }
+  .step-num.s3 { background: linear-gradient(135deg, #eafaf1, #b8e6ca); }
+  .step-num.s4 { background: linear-gradient(135deg, #f5eafd, #e0b8f5); }
+  .process-step h4 { font-weight: 700; font-size: 15px; color: var(--primary); margin-bottom: 5px; }
+  .process-step p { font-size: 13px; color: var(--muted); }
+
+  /* FINAL CTA */
+  .final-cta { background: linear-gradient(135deg, var(--primary) 0%, #0e3550 100%); color: #fff; text-align: center; padding: 80px 20px; }
+  .final-cta h2 { font-family: 'Playfair Display', serif; font-size: clamp(30px, 5vw, 50px); margin-bottom: 14px; }
+  .final-cta p { font-size: 18px; opacity: .8; margin-bottom: 36px; }
+  .final-cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn-white { background: #fff; color: var(--primary); border: none; border-radius: 10px; padding: 15px 32px; font-size: 16px; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-block; transition: all .25s; }
+  .btn-white:hover { background: var(--accent); color: #fff; }
+  .btn-outline-white { background: transparent; border: 2px solid rgba(255,255,255,.5); color: #fff; border-radius: 10px; padding: 13px 28px; font-size: 15px; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-block; transition: all .25s; }
+  .btn-outline-white:hover { border-color: #fff; background: rgba(255,255,255,.1); }
+
+  /* STICKY CTA (mobile) */
+  .sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: var(--primary); padding: 14px 20px; z-index: 999; box-shadow: 0 -4px 20px rgba(0,0,0,.2); }
+  .sticky-cta a { display: block; text-align: center; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #fff; border-radius: 10px; padding: 14px; font-size: 16px; font-weight: 700; text-decoration: none; }
+  .sticky-cta-sub { text-align: center; font-size: 12px; color: rgba(255,255,255,.7); margin-top: 5px; }
+
+  /* FOOTER */
+  .footer { background: #0e1f2d; color: rgba(255,255,255,.7); text-align: center; padding: 24px 20px; font-size: 14px; }
+  .footer a { color: var(--accent2); text-decoration: none; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .lead-form-card { max-width: 520px; margin: 0 auto; }
+    .curriculum-grid { grid-template-columns: 1fr; }
+    .process-steps { grid-template-columns: repeat(2, 1fr); }
+    .process-steps::before { display: none; }
+  }
+  @media (max-width: 600px) {
+    .section { padding: 48px 0; }
+    .process-steps { grid-template-columns: 1fr 1fr; }
+    .compare-table { font-size: 13px; }
+    .compare-table th, .compare-table td { padding: 10px 12px; }
+    .sticky-cta { display: block; }
+    body { padding-bottom: 80px; }
+    .navbar-cta .btn-primary { display: none; }
+  }
+  @media (max-width: 420px) {
+    .process-steps { grid-template-columns: 1fr; }
+  }
+
+  /* ANIMATIONS */
+  .fade-up { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="#" class="navbar-logo">
+      <div class="navbar-logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.2l8 4v8.4l-8 4-8-4V8.2l8-4z"/></svg>
+      </div>
+      <div class="navbar-brand">Seedling Public School <span>Jawahar Nagar, Jaipur</span></div>
+    </a>
+    <div class="navbar-cta">
+      <a class="navbar-phone" href="tel:+917413012351">
+        <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        +91 74130 12351
+      </a>
+      <a href="#enquire" class="btn-primary" style="padding:11px 22px;font-size:14px;">Get Admission Details</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <!-- Left: Copy -->
+      <div>
+        <div class="hero-eyebrow">
+          <span class="urgency-chip">🔴 Admissions Open 2026–27</span>
+          <span class="badge green">✓ Seats Filling Fast</span>
+        </div>
+        <h1>CBSE &amp; Cambridge<br>School in <em>Jaipur</em> —<br>Admissions Open</h1>
+        <p class="hero-sub">Choose the right path for your child – strong academics or global learning</p>
+        <p class="hero-tagline">"One School. Two Curriculums."</p>
+        <div class="trust-badges">
+          <span class="badge">🎓 CBSE &amp; Cambridge</span>
+          <span class="badge">💡 Smart Classrooms</span>
+          <span class="badge green">🛡️ Safe Campus</span>
+          <span class="badge orange">⭐ Est. 1992</span>
+        </div>
+        <div class="hero-cta-row">
+          <a href="#enquire" class="btn-primary" style="font-size:17px;padding:17px 36px;">Get Admission Details →</a>
+          <a href="tel:+917413012351" class="btn-outline">📞 Call Now</a>
+        </div>
+        <p class="hero-cta-sub">⚠️ Limited seats available. Enquire today to secure your child's future.</p>
+      </div>
+
+      <!-- Right: Lead Form -->
+      <div id="enquire">
+        <div class="lead-form-card">
+          <h3>Enquire Now</h3>
+          <p>Fill in the form and our team will call you within 24 hours</p>
+          <div class="form-group">
+            <label>Student's Name *</label>
+            <input type="text" placeholder="Enter student's name" />
+          </div>
+          <div class="form-group">
+            <label>Parent's Name *</label>
+            <input type="text" placeholder="Enter your name" />
+          </div>
+          <div class="form-group">
+            <label>Mobile Number *</label>
+            <input type="tel" placeholder="+91 XXXXXXXXXX" />
+          </div>
+          <div class="form-group">
+            <label>Class Applying For *</label>
+            <select>
+              <option value="">Select Class</option>
+              <option>Class 1</option><option>Class 2</option><option>Class 3</option>
+              <option>Class 4</option><option>Class 5</option><option>Class 6</option>
+              <option>Class 7</option><option>Class 8</option><option>Class 9</option>
+              <option>Class 10</option><option>Class 11</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>City *</label>
+            <input type="text" placeholder="Your city" />
+          </div>
+          <button class="btn-primary form-submit" onclick="handleFormSubmit()">Submit Enquiry →</button>
+          <p class="form-urgency">🔴 Limited Seats Available – Apply Now</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="section" id="why">
+  <div class="container">
+    <div class="fade-up" style="text-align:center;">
+      <p style="color:var(--accent);font-weight:700;font-size:14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Why Us</p>
+      <h2 class="section-title" style="text-align:center;">Why Parents Prefer Our School</h2>
+      <div class="divider" style="margin:16px auto 0;"></div>
+    </div>
+    <div class="why-grid" style="margin-top:44px;">
+      <div class="why-card fade-up">
+        <div class="why-card-icon" style="background:linear-gradient(135deg,#eaf4fb,#c5dff1);">🌐</div>
+        <h4>Dual Curriculum</h4>
+        <p>Choose between CBSE or Cambridge — both under one roof for maximum flexibility</p>
+      </div>
+      <div class="why-card fade-up">
+        <div class="why-card-icon" style="background:linear-gradient(135deg,#eafaf1,#b8e6ca);">📚</div>
+        <h4>Academics + Skills</h4>
+        <p>We balance rigorous academics with real-world skill development and life skills</p>
+      </div>
+      <div class="why-card fade-up">
+        <div class="why-card-icon" style="background:linear-gradient(135deg,#fef5e7,#fde0b8);">👩‍🏫</div>
+        <h4>Experienced Faculty</h4>
+        <p>Highly qualified teachers with 10+ years of experience, trained in NEP principles</p>
+      </div>
+      <div class="why-card fade-up">
+        <div class="why-card-icon" style="background:linear-gradient(135deg,#fdf0f8,#f5c9e8);">🛡️</div>
+        <h4>Safe Environment</h4>
+        <p>CCTV-monitored campus, trained security staff, and strict child safety policies</p>
+      </div>
+      <div class="why-card fade-up">
+        <div class="why-card-icon" style="background:linear-gradient(135deg,#eaf4fb,#c5dff1);">💡</div>
+        <h4>Modern Teaching</h4>
+        <p>Smart boards, experiential learning, digital labs and project-based curriculum</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRICULUM -->
+<section class="section curriculum-section" id="curriculum">
+  <div class="container">
+    <div class="fade-up" style="text-align:center;">
+      <p style="color:var(--accent);font-weight:700;font-size:14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Curriculum</p>
+      <h2 class="section-title" style="text-align:center;">Two World-Class Curriculums</h2>
+      <p class="section-sub" style="margin:10px auto 0;text-align:center;">Both designed to give your child a strong foundation and a bright future</p>
+      <div class="divider" style="margin:16px auto 0;"></div>
+    </div>
+    <div class="curriculum-grid">
+      <div class="curriculum-card fade-up">
+        <span class="curriculum-label cbse">🇮🇳 CBSE Curriculum</span>
+        <h3>Strong Academic Foundation</h3>
+        <ul class="curriculum-list">
+          <li>Structured syllabus aligned with NCERT standards</li>
+          <li>Best preparation for JEE, NEET, UPSC &amp; national exams</li>
+          <li>Focus on depth of knowledge and concept clarity</li>
+          <li>Regular assessments with clear progression</li>
+          <li>Nationally recognised and widely accepted board</li>
+        </ul>
+      </div>
+      <div class="curriculum-card cambridge fade-up">
+        <span class="curriculum-label cambridge">🌍 Cambridge Curriculum</span>
+        <h3>Global Exposure &amp; Future Skills</h3>
+        <ul class="curriculum-list">
+          <li>Internationally recognised Cambridge (CAIE) framework</li>
+          <li>Skill-based and inquiry-led approach to learning</li>
+          <li>Focus on critical thinking and problem-solving</li>
+          <li>Prepares for universities in India and abroad</li>
+          <li>Encourages creativity, collaboration and communication</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Comparison Table -->
+    <div class="compare-wrap fade-up" style="margin-top:44px;">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>CBSE</th>
+            <th>Cambridge</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Strong for Indian Exams (JEE/NEET)</td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>Global University Recognition</td><td><span class="cross">–</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>Structured &amp; Exam-Oriented</td><td><span class="tick">✓</span></td><td><span class="cross">–</span></td></tr>
+          <tr><td>Skill &amp; Project-Based Learning</td><td><span class="cross">–</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>Critical Thinking Focus</td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>Available at Seedling, Jaipur</td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="text-align:center;margin-top:36px;">
+      <a href="#enquire" class="btn-primary">Get Curriculum Details →</a>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS & DEVELOPMENT -->
+<section class="section" id="skills">
+  <div class="container">
+    <div class="fade-up" style="text-align:center;">
+      <p style="color:var(--accent);font-weight:700;font-size:14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Holistic Growth</p>
+      <h2 class="section-title" style="text-align:center;">Beyond Academics</h2>
+      <p class="section-sub" style="margin:10px auto 0;text-align:center;">We nurture well-rounded individuals ready for the world</p>
+      <div class="divider" style="margin:16px auto 0;"></div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card fade-up">
+        <span class="skill-icon">🎤</span>
+        <h4>Public Speaking</h4>
+        <p>Debate clubs, MUN &amp; presentation skills that build lifelong confidence</p>
+      </div>
+      <div class="skill-card fade-up">
+        <span class="skill-icon">💻</span>
+        <h4>Coding &amp; Tech</h4>
+        <p>Age-appropriate coding from Class 3 onwards, AI basics for seniors</p>
+      </div>
+      <div class="skill-card fade-up">
+        <span class="skill-icon">🏅</span>
+        <h4>Leadership</h4>
+        <p>Student council, team projects and community responsibility programmes</p>
+      </div>
+      <div class="skill-card fade-up">
+        <span class="skill-icon">⚽</span>
+        <h4>Sports</h4>
+        <p>Football, cricket, chess, athletics and yoga — something for every child</p>
+      </div>
+      <div class="skill-card fade-up">
+        <span class="skill-icon">🎨</span>
+        <h4>Creativity &amp; Arts</h4>
+        <p>Fine arts, music, drama and design thinking workshops every week</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FACILITIES -->
+<section class="section facilities-section" id="facilities">
+  <div class="container">
+    <div class="fade-up" style="text-align:center;">
+      <p style="color:var(--accent);font-weight:700;font-size:14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Campus</p>
+      <h2 class="section-title" style="text-align:center;">World-Class Facilities</h2>
+      <p class="section-sub" style="margin:10px auto 0;text-align:center;">A campus designed to inspire learning, creativity and health</p>
+      <div class="divider" style="margin:16px auto 0;"></div>
+    </div>
+    <div class="facilities-grid">
+      <div class="facility-card fade-up">
+        <div class="facility-img cl">💡</div>
+        <div class="facility-body"><h4>Smart Classrooms</h4><p>Interactive whiteboards, digital resources and tech-enabled learning</p></div>
+      </div>
+      <div class="facility-card fade-up">
+        <div class="facility-img lab">🔬</div>
+        <div class="facility-body"><h4>Modern Labs</h4><p>Science, computer and language labs equipped with latest instruments</p></div>
+      </div>
+      <div class="facility-card fade-up">
+        <div class="facility-img sports">🏟️</div>
+        <div class="facility-body"><h4>Sports Complex</h4><p>Multi-sport grounds, indoor courts and fitness facilities for all ages</p></div>
+      </div>
+      <div class="facility-card fade-up">
+        <div class="facility-img art">🎭</div>
+        <div class="facility-body"><h4>Activity Areas</h4><p>Dedicated spaces for arts, music, dance and extracurricular activities</p></div>
+      </div>
+      <div class="facility-card fade-up">
+        <div class="facility-img safe">🔒</div>
+        <div class="facility-body"><h4>Safety Systems</h4><p>CCTV surveillance, biometric access, trained guards and medical room</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="testimonials">
+  <div class="container">
+    <div class="fade-up" style="text-align:center;">
+      <p style="color:var(--accent);font-weight:700;font-size:14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Parent Stories</p>
+      <h2 class="section-title" style="text-align:center;">What Parents Say About Us</h2>
+      <div class="divider" style="margin:16px auto 0;"></div>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card fade-up">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">The dual curriculum was the main reason we chose Seedling. My son started in CBSE and later switched to Cambridge — the school made it seamless. He's now confident, curious and loves coming to school every day.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:linear-gradient(135deg,#1a5276,#2e86c1);">K</div>
+          <div><div class="author-name">Komal Bhatia</div><div class="author-meta">Mother of Garv, Class V · Jaipur</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-up">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">The teachers genuinely care about every child. The campus is safe, the faculty is experienced, and the focus on skills alongside academics is exactly what we were looking for. Best decision we made for our daughter.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:linear-gradient(135deg,#e67e22,#f39c12);">A</div>
+          <div><div class="author-name">Aditi Sharma</div><div class="author-meta">Parent, Class VII · Vaishali Nagar</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-up">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">My child has grown so much here — not just in marks but in personality. The smart classrooms and experiential learning have made studies fun. I recommend Seedling to every parent who wants the best for their child.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:linear-gradient(135deg,#1e8449,#27ae60);">A</div>
+          <div><div class="author-name">Ashish Kumar Jain</div><div class="author-meta">Parent, Class III · C-Scheme, Jaipur</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADMISSION PROCESS -->
+<section class="section process-section" id="process">
+  <div class="container">
+    <div class="fade-up" style="text-align:center;">
+      <p style="color:var(--accent);font-weight:700;font-size:14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Simple &amp; Quick</p>
+      <h2 class="section-title" style="text-align:center;">How to Apply — 4 Simple Steps</h2>
+      <p class="section-sub" style="margin:10px auto 0;text-align:center;">Admission is easy. We'll guide you at every step.</p>
+      <div class="divider" style="margin:16px auto 0;"></div>
+    </div>
+    <div class="process-steps">
+      <div class="process-step fade-up">
+        <div class="step-num s1">📝</div>
+        <h4>Fill the Form</h4>
+        <p>Submit your details via the enquiry form on this page</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="step-num s2">📞</div>
+        <h4>Get a Call</h4>
+        <p>Our admission counsellor will call within 24 hours</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="step-num s3">🏫</div>
+        <h4>Visit School</h4>
+        <p>Schedule a campus tour at a time that suits your family</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="step-num s4">🎉</div>
+        <h4>Confirm Admission</h4>
+        <p>Complete enrollment and welcome your child to Seedling!</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px;">
+      <a href="#enquire" class="btn-primary" style="font-size:17px;padding:17px 40px;">Start the Process Now →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="container">
+    <div class="fade-up">
+      <span class="urgency-chip" style="font-size:14px;">🔴 2026–27 Admissions Open</span>
+      <h2 style="margin-top:20px;">Start Your Child's Future Today</h2>
+      <p>Admissions open for limited seats — don't miss the opportunity</p>
+      <div class="final-cta-btns">
+        <a href="#enquire" class="btn-white">Apply Now →</a>
+        <a href="tel:+917413012351" class="btn-outline-white">📞 +91 74130 12351</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>© 2026 Seedling Public School, Jawahar Nagar, Jaipur. All rights reserved.</p>
+  <p style="margin-top:6px;"><a href="tel:+917413012351">+91 74130 12351</a> &nbsp;|&nbsp; <a href="https://seedlingschools.com">seedlingschools.com</a></p>
+</footer>
+
+<!-- STICKY CTA (mobile) -->
+<div class="sticky-cta">
+  <a href="#enquire">🎓 Get Admission Details – Limited Seats!</a>
+  <p class="sticky-cta-sub">⚠️ Enquire Now for 2026–27</p>
+</div>
+
+<script>
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Form submit handler
+  function handleFormSubmit() {
+    const btn = document.querySelector('.form-submit');
+    btn.textContent = '✅ Thank You! We\'ll call you soon.';
+    btn.style.background = '#1e8449';
+    btn.disabled = true;
+  }
+</script>
+</body>
+</html>
