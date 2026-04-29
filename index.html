@@ -2847,7 +2847,11 @@ Athletics
       link.addEventListener('click', function(e) {
         e.preventDefault();
         const target = window.innerWidth <= 768 ? '#enquire-mobile' : '#enquire';
-        document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
+        const el = document.querySelector(target);
+        if (el) {
+          const top = el.getBoundingClientRect().top + window.scrollY - 200;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
       });
     });
 
