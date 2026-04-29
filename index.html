@@ -298,9 +298,9 @@
 
       .hero-form-mobile {
         display: block !important;
-        padding: 20px;
+        padding: 40px 20px 20px;
         background: #001c7d;
-        height: 415px;
+        height: 455px;
       }
     }
 
@@ -1587,7 +1587,7 @@
       right: 0;
       background: transparent;
       /* padding: 14px 20px; */
-      z-index: 999;
+      z-index: 1001;
     }
 
     .sticky-cta a {
@@ -1601,6 +1601,8 @@
       font-weight: 700;
       text-decoration: none;
       box-shadow: 0 4px 20px rgba(230, 126, 34, 0.4);
+      cursor: pointer;
+      pointer-events: auto;
     }
 
     .sticky-cta-sub {
@@ -2839,6 +2841,15 @@ Athletics
       });
     }, { threshold: 0.1 });
     document.querySelectorAll('.fade-up, .growth-card').forEach(el => observer.observe(el));
+
+    // Smooth scroll to correct form on mobile vs desktop
+    document.querySelectorAll('a[href="#enquire"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = window.innerWidth <= 768 ? '#enquire-mobile' : '#enquire';
+        document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
 
     // UTM params
     function getUTM() {
