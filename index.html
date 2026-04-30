@@ -1546,7 +1546,7 @@
     }
 
     .sticky-cta a {
-      display: block;
+      display: none;
       text-align: center;
       background: linear-gradient(135deg, var(--accent), var(--accent2));
       color: #fff;
@@ -1607,6 +1607,9 @@
     }
 
     @media (max-width: 600px) {
+      .sticky-cta a {
+      display: block;
+      }
       .section {
         padding: 35px 0;
       }
@@ -1664,6 +1667,9 @@
       .lead-form-card {
         padding: 24px 20px;
       }
+       body {
+        padding-bottom: 50px;
+      }
     }
 
       .process-steps {
@@ -1683,9 +1689,7 @@
         display: block;
       }
 
-      body {
-        padding-bottom: 60px;
-      }
+     
 
       .navbar-cta .btn-primary {
         display: none;
